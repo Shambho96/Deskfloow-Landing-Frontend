@@ -76,7 +76,7 @@ export function HospitalityExperience() {
   const active = experiences[activeTab];
 
   return (
-    <section className="py-24 sm:py-32 bg-gradient-to-b from-white via-brand-50/50 to-white dark:from-[#0d0420] dark:via-[#140827] dark:to-[#0d0420]">
+    <section className="py-24 sm:py-32 bg-gradient-to-b from-white via-brand-50/50 to-white">
       <div className="container-x">
         <SectionHeading
           align="center"
@@ -87,16 +87,17 @@ export function HospitalityExperience() {
 
         {/* Interactive Tab Selector */}
         <div className="mt-12 flex justify-center">
-          <div className="flex flex-wrap items-center justify-center gap-2 rounded-2xl border border-line bg-white/80 p-1.5 shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/5">
+          <div className="flex flex-wrap items-center justify-center gap-2 rounded-2xl border border-border bg-card/80 p-1.5 shadow-sm backdrop-blur">
             {experiences.map((exp, idx) => (
               <button
+                type="button"
                 key={exp.id}
                 onClick={() => setActiveTab(idx)}
                 className={cn(
                   "flex items-center gap-2 rounded-xl px-5 py-2.5 text-[13.5px] font-semibold transition-all duration-200",
                   activeTab === idx
-                    ? "bg-brand-600 text-white shadow-md shadow-brand-600/25"
-                    : "text-muted hover:text-ink hover:bg-brand-50/70 dark:text-white/70 dark:hover:text-white dark:hover:bg-white/5"
+                    ? "bg-primary text-primary-foreground shadow-md"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
                 )}
               >
                 {exp.id === "frontdesk" && <UsersRound className="size-4" />}
@@ -122,19 +123,19 @@ export function HospitalityExperience() {
               {/* Left Column: Details & Benefits */}
               <div className="flex flex-col justify-between p-8 sm:p-12">
                 <div>
-                  <span className="inline-block text-[12px] font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400">
+                  <span className="inline-block text-[12px] font-bold uppercase tracking-wider text-brand-600">
                     {active.tag}
                   </span>
-                  <h3 className="mt-2 text-[26px] font-bold leading-tight tracking-tight text-ink sm:text-[34px] dark:text-white">
+                  <h3 className="mt-2 text-[26px] font-bold leading-tight tracking-tight text-ink sm:text-[34px]">
                     {active.title}
                   </h3>
-                  <p className="mt-4 text-[15.5px] leading-relaxed text-muted dark:text-white/70">
+                  <p className="mt-4 text-[15.5px] leading-relaxed text-muted">
                     {active.description}
                   </p>
 
                   <div className="mt-6 space-y-3">
                     {active.features.map((feat) => (
-                      <div key={feat} className="flex items-start gap-2.5 text-[14.5px] text-ink dark:text-white/90">
+                      <div key={feat} className="flex items-start gap-2.5 text-[14.5px] text-ink">
                         <CheckCircle2 className="size-5 shrink-0 text-success mt-0.5" />
                         <span>{feat}</span>
                       </div>
@@ -142,12 +143,12 @@ export function HospitalityExperience() {
                   </div>
                 </div>
 
-                <div className="mt-10 pt-8 border-t border-line dark:border-white/10">
+                <div className="mt-10 pt-8 border-t border-line">
                   <div className="grid grid-cols-3 gap-4">
                     {active.metrics.map((m) => (
-                      <div key={m.label} className="rounded-xl bg-brand-50/80 p-3.5 dark:bg-white/5">
-                        <p className="text-[24px] font-bold tracking-tight text-brand-700 dark:text-brand-300">{m.val}</p>
-                        <p className="text-[12px] font-semibold text-ink dark:text-white">{m.label}</p>
+                      <div key={m.label} className="rounded-xl bg-brand-50/80 p-3.5">
+                        <p className="text-[24px] font-bold tracking-tight text-brand-700">{m.val}</p>
+                        <p className="text-[12px] font-semibold text-ink">{m.label}</p>
                         <p className="text-[11px] text-muted">{m.sub}</p>
                       </div>
                     ))}

@@ -42,7 +42,7 @@ export function LoginForm() {
       <div>
         <div className="flex justify-between items-center mb-1.5">
           <label className="label mb-0" htmlFor="login-password">Password</label>
-          <a href="#forgot" className="text-[12px] font-medium text-brand-600 hover:underline dark:text-brand-400">
+          <a href="#forgot" className="text-[12px] font-medium text-brand-600 hover:underline">
             Forgot password?
           </a>
         </div>
@@ -59,10 +59,10 @@ export function LoginForm() {
         {loading ? "Verifying..." : "Sign In to Property"} <ArrowRight className="size-4 ml-1" />
       </Button>
 
-      <div className="mt-6 pt-5 border-t border-line dark:border-white/10 text-center">
-        <p className="text-[13px] text-muted dark:text-white/60">
+      <div className="mt-6 pt-5 border-t border-line text-center">
+        <p className="text-[13px] text-muted">
           Not a DeskFloow customer yet?{" "}
-          <Link href="/book-demo" className="font-semibold text-brand-600 hover:underline dark:text-brand-400">
+          <Link href="/book-demo" className="font-semibold text-brand-600 hover:underline">
             Book a guided demo
           </Link>
         </p>

@@ -33,16 +33,16 @@ export function ValueStrip() {
           </p>
         </Reveal>
         <Reveal delay={0.1}>
-          <div className="rounded-2xl border border-line bg-brand-50/60 p-2">
+          <div className="rounded-2xl border border-border bg-card/60 p-2">
             <div className="flex items-center justify-between px-3 pt-2 pb-3">
-              <p className="text-[13px] font-medium text-ink">{s.property.name} · demo day snapshot</p>
-              <span className="demo-badge">Demo data</span>
+              <p className="text-[13px] font-semibold text-foreground">{s.property.name} · Operations Overview</p>
+              <span className="chip bg-primary/10 text-primary font-semibold">Live Metrics</span>
             </div>
             <div className="grid grid-cols-2 gap-2">
               {metrics.map((m) => (
-                <div key={m.label} className="rounded-xl bg-white p-5 shadow-card">
-                  <m.icon className="size-5 text-brand-500" />
-                  <CountUp value={m.value} className="mt-3 block text-[40px] leading-none font-semibold tracking-tight text-ink" />
+                <div key={m.label} className="rounded-xl border border-border/70 bg-card p-5 shadow-sm">
+                  <m.icon className="size-5 text-primary" />
+                  <CountUp value={m.value} className="mt-3 block text-[40px] leading-none font-bold tracking-tight text-foreground" />
                   <p className="mt-2 text-[13px] text-muted">{m.label}</p>
                 </div>
               ))}

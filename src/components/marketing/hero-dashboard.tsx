@@ -45,25 +45,25 @@ export function HeroDashboard() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="relative overflow-hidden rounded-[22px] border border-white/70 bg-white/80 shadow-[0_40px_120px_-40px_rgb(84_39_184/0.55)] ring-1 ring-brand-200/60 backdrop-blur-xl"
-        aria-label="DeskFloow dashboard preview with demonstration data"
+        className="relative overflow-hidden rounded-[22px] border border-border bg-card/90 shadow-2xl backdrop-blur-xl text-card-foreground"
+        aria-label="DeskFloow dashboard preview"
         role="img"
       >
         {/* window chrome */}
-        <div className="flex items-center gap-3 border-b border-line bg-white/70 px-4 py-2.5">
+        <div className="flex items-center gap-3 border-b border-border bg-card/70 px-4 py-2.5">
           <div className="flex gap-1.5">
-            <span className="size-2.5 rounded-full bg-rose-300" />
-            <span className="size-2.5 rounded-full bg-amber-300" />
-            <span className="size-2.5 rounded-full bg-emerald-300" />
+            <span className="size-2.5 rounded-full bg-rose-400" />
+            <span className="size-2.5 rounded-full bg-amber-400" />
+            <span className="size-2.5 rounded-full bg-emerald-400" />
           </div>
-          <div className="mx-auto flex items-center gap-2 rounded-md bg-brand-50 px-3 py-1 text-[11px] text-muted">
-            <span className="size-1.5 rounded-full bg-success" /> app.deskfloow · {snap.property.name}
+          <div className="mx-auto flex items-center gap-2 rounded-md bg-muted px-3 py-1 text-[11px] text-muted-foreground">
+            <span className="size-1.5 rounded-full bg-emerald-500" /> app.deskfloow · {snap.property.name}
           </div>
-          <span className="demo-badge">Demo data</span>
+          <span className="chip bg-primary/10 text-primary font-semibold text-[11px]">Live PMS</span>
         </div>
 
         <div className="grid grid-cols-[52px_1fr]">
-          <aside className="flex flex-col items-center gap-3 border-r border-line bg-brand-50/60 py-4">
+          <aside className="flex flex-col items-center gap-3 border-r border-border bg-muted/20 py-4">
             {[LayoutDashboard, CalendarCheck, BedDouble, UsersRound, MessageCircle, UtensilsCrossed].map((I, i) => (
               <span key={i} className={cn("grid size-8 place-items-center rounded-lg text-muted", i === 0 && "bg-brand-600 text-white shadow-md")}>
                 <I className="size-4" />

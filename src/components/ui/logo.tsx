@@ -9,12 +9,12 @@ import { cn } from "@/lib/utils";
  */
 export function Logo({
   className,
-  tone = "dark",
+  tone = "default",
   height = 36,
   showWordmark = true,
 }: {
   className?: string;
-  tone?: "dark" | "light";
+  tone?: "default" | "light";
   height?: number;
   priority?: boolean;
   showWordmark?: boolean;
@@ -37,7 +37,7 @@ export function Logo({
         <span
           className={cn(
             "font-bold tracking-[-0.03em] flex items-center leading-none",
-            tone === "light" ? "text-white" : "text-ink dark:text-white",
+            tone === "light" ? "text-white" : "text-ink",
           )}
           style={{ fontSize: Math.round(height * 0.6) }}
         >

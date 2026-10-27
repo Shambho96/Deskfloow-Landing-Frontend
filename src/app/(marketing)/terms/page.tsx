@@ -46,7 +46,7 @@ export default function TermsPage() {
         <h2>Contact</h2>
         <p>
           For inquiries regarding these Terms, please contact our team via the{" "}
-          <Link href="/contact" className="text-brand-600 underline dark:text-brand-400">
+          <Link href="/contact" className="text-brand-600 underline">
             contact page
           </Link>.
         </p>

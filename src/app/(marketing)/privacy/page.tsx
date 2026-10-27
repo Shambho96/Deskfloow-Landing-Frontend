@@ -40,13 +40,13 @@ export default function PrivacyPage() {
 
         <h2>Cookies and Preferences</h2>
         <p>
-          We store minimal preferences (such as your light/dark theme selection) locally in your browser. We do not sell your personal or hotel operational data to third parties.
+          We store minimal preferences locally in your browser. We do not sell your personal or hotel operational data to third parties.
         </p>
 
         <h2>Contact Our Privacy Team</h2>
         <p>
           If you have questions regarding this Privacy Policy or your data protection rights, please contact our team via the{" "}
-          <Link href="/contact" className="text-brand-600 underline dark:text-brand-400">
+          <Link href="/contact" className="text-brand-600 underline">
             contact page
           </Link>.
         </p>

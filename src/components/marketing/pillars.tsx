@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { type ReactNode } from "react";
 import { ArrowRight, CalendarCheck, Check, ShieldCheck, Sparkles } from "lucide-react";
-import { DemoProvider } from "@/components/demo/demo-store";
 import { FrontDeskDashboard } from "@/components/dashboard/front-desk";
 import { TapeChart } from "@/components/dashboard/tape-chart";
 import { FloorPlan } from "@/components/dashboard/floor-plan";
@@ -41,7 +40,7 @@ export function Pillar({
         <div className="flex flex-wrap items-end justify-between gap-6">
           <SectionHeading eyebrow={eyebrow} title={title} lead={lead} />
           {aside ?? (
-            <span className="chip bg-brand-100/90 text-brand-700 dark:bg-white/10 dark:text-brand-300 font-semibold px-3 py-1">
+            <span className="chip bg-brand-100/90 text-brand-700 font-semibold px-3 py-1">
               <Sparkles className="size-3 text-gold-500" /> Interactive Product Preview
             </span>
           )}
@@ -60,7 +59,7 @@ export function FrontDeskPillar() {
       title="Your entire front desk. One clear picture."
       lead="Know what's happening across arrivals, departures, occupancy, cash, and room readiness without switching between disconnected tools."
     >
-      <div id="analytics" className="scroll-mt-24 rounded-[28px] border border-line bg-brand-50/50 p-3 sm:p-5 dark:border-white/10 dark:bg-white/5">
+      <div id="analytics" className="scroll-mt-24 rounded-[28px] border border-line bg-brand-50/50 p-3 sm:p-5">
         <FrontDeskDashboard />
       </div>
     </Pillar>
@@ -74,7 +73,7 @@ export function TapeChartPillar() {
       eyebrow="Visual 7-day tape chart"
       title="See every room. Every reservation. Every day."
       lead="Drag a booking to another room or date, click an empty cell to create one, or open any reservation to reassign it with the keyboard. Overlaps are blocked and nothing is overwritten."
-      className="bg-white dark:bg-[#0f0423]"
+      className="bg-white"
     >
       <TapeChart />
     </Pillar>
@@ -88,7 +87,7 @@ export function ChannelsPillar() {
       <div className="grid-bg pointer-events-none absolute inset-0 opacity-30 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
       <div className="container-x relative">
         <SectionHeading
-          tone="dark"
+          tone="inverted"
           eyebrow="OTA channel manager"
           title={<>Every booking channel. <span className="bg-gradient-to-r from-gold-300 via-gold-400 to-amber-300 bg-clip-text text-transparent">One source of truth.</span></>}
           lead="Bring your direct reservations and connected online travel agencies into a unified inventory workflow designed to eliminate manual updates and prevent costly double bookings."
@@ -136,7 +135,7 @@ export function TourPillar() {
       eyebrow="Guided product tour"
       title="Watch a front-desk task, start to finish."
       lead="Follow the guided workflow — or interact with each step to experience how quickly staff complete check-in and room assignments."
-      className="bg-gradient-to-b from-white to-brand-50/60 dark:from-[#0f0423] dark:to-[#160a2e]"
+      className="bg-gradient-to-b from-white to-brand-50/60"
       aside={<span />}
     >
       <ProductTour />
@@ -170,7 +169,7 @@ export function HousekeepingPillar() {
       eyebrow="Visual floor plan & housekeeping"
       title="Know the status of every room at a single glance."
       lead="Select any room to update its status from dirty to cleaning to clean — changes instantly synchronize with the tape chart and arrivals check-in guard."
-      className="bg-white dark:bg-[#0f0423]"
+      className="bg-white"
     >
       <FloorPlan />
     </Pillar>
@@ -192,7 +191,7 @@ export function CrmPillar() {
 
 export function BookingPillar() {
   return (
-    <section id="booking" className="scroll-mt-20 py-20 sm:py-28 bg-brand-50/40 dark:bg-white/[0.02]">
+    <section id="booking" className="scroll-mt-20 py-20 sm:py-28 bg-brand-50/40">
       <div className="container-x grid items-center gap-12 lg:grid-cols-2">
         <SectionHeading
           eyebrow="Direct booking engine"
@@ -207,7 +206,7 @@ export function BookingPillar() {
               View Commission-Free Plans <ArrowRight className="size-4" />
             </ButtonLink>
           </div>
-          <div className="mt-5 space-y-2 text-[13px] text-muted dark:text-white/60">
+          <div className="mt-5 space-y-2 text-[13px] text-muted">
             <p className="flex items-center gap-2">
               <Check className="size-4 text-success" /> 0% commissions on all direct bookings
             </p>
@@ -230,13 +229,13 @@ export function BookingPillar() {
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-brand-950/85 via-transparent" />
-            <div className="absolute inset-x-4 bottom-4 rounded-2xl bg-white/95 p-5 backdrop-blur dark:bg-[#190a30]/95 dark:border dark:border-white/10">
+            <div className="absolute inset-x-4 bottom-4 rounded-2xl bg-white/95 p-5 backdrop-blur shadow-md">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-[15px] font-bold text-ink dark:text-white">Royal Heritage Suite</p>
+                  <p className="text-[15px] font-bold text-ink">Royal Heritage Suite</p>
                   <p className="text-[12px] text-muted">Direct Exclusive Rate · Free Breakfast</p>
                 </div>
-                <p className="text-[17px] font-bold text-brand-700 dark:text-gold-400">₹14,500</p>
+                <p className="text-[17px] font-bold text-brand-700">₹14,500</p>
               </div>
               <div className="mt-4 flex gap-1">
                 {["Select Room", "Guest Details", "Instant Confirmation"].map((s, i) => (
@@ -244,12 +243,12 @@ export function BookingPillar() {
                     key={s}
                     className={cn(
                       "h-1.5 flex-1 rounded-full",
-                      i < 2 ? "bg-brand-600 dark:bg-brand-400" : "bg-brand-100 dark:bg-white/10"
+                      i < 2 ? "bg-brand-600" : "bg-brand-100"
                     )}
                   />
                 ))}
               </div>
-              <p className="mt-3 text-center text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
+              <p className="mt-3 text-center text-[11px] font-semibold text-emerald-600">
                 ✓ Guaranteed Lowest Rate · Free Cancellation
               </p>
             </div>
@@ -267,7 +266,7 @@ export function FoliosPillar() {
       eyebrow="Folios, invoices & shift register"
       title="Every charge on the folio. Every rupee in the drawer."
       lead="Room nights, taxes, dining, laundry and spa charges automatically roll into itemized guest folios. The shift register calculates expected cash, card, and UPI balances at handover with clear variance tracking."
-      className="bg-white dark:bg-[#0f0423]"
+      className="bg-white"
     >
       <div className="grid gap-4 lg:grid-cols-[1.3fr_1fr]">
         <div className="card p-5"><FolioView reservationId="RSV-1039" /></div>
@@ -293,10 +292,10 @@ export function MultiPropertyPillar() {
   );
 }
 
-/** The interactive product showcase of the homepage */
+/** The product showcase of the homepage */
 export function HomePillars() {
   return (
-    <DemoProvider>
+    <>
       <MultiPropertyPillar />
       <FrontDeskPillar />
       <TapeChartPillar />
@@ -308,13 +307,13 @@ export function HomePillars() {
       <CrmPillar />
       <BookingPillar />
       <FoliosPillar />
-    </DemoProvider>
+    </>
   );
 }
 
 export function FeaturePillars() {
   return (
-    <DemoProvider>
+    <>
       <FrontDeskPillar />
       <TapeChartPillar />
       <ChannelsPillar />
@@ -324,6 +323,6 @@ export function FeaturePillars() {
       <CrmPillar />
       <FoliosPillar />
       <MultiPropertyPillar />
-    </DemoProvider>
+    </>
   );
 }

@@ -99,10 +99,10 @@ export function ProductTour() {
         </div>
       </div>
 
-      <div ref={box} className="relative overflow-hidden rounded-2xl border border-line bg-white p-4 shadow-lift">
+      <div ref={box} className="relative overflow-hidden rounded-2xl border border-border bg-card p-4 shadow-lift text-card-foreground">
         <div className="mb-3 flex items-center justify-between">
-          <p className="text-[13px] font-semibold text-ink">Grand Palace · Front desk</p>
-          <span className="demo-badge">Guided demo</span>
+          <p className="text-[13px] font-semibold text-foreground">Grand Palace · Front Desk</p>
+          <span className="chip bg-primary/10 text-primary font-semibold">Workflow Preview</span>
         </div>
         <div className="grid gap-4 md:grid-cols-[180px_1fr_170px]">
           {/* Room grid */}

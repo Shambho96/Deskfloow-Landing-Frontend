@@ -108,9 +108,9 @@ export function CommandPalette() {
       aria-label="Search DeskFloow features and solutions"
       className="mx-auto mt-[12vh] w-[min(640px,calc(100vw-24px))] rounded-3xl bg-transparent p-0 backdrop:bg-brand-950/60 backdrop:backdrop-blur-md"
     >
-      <div className="card overflow-hidden border border-brand-200/60 shadow-2xl dark:border-white/10 dark:bg-[#140827]">
-        <div className="flex items-center gap-3 border-b border-line px-5 dark:border-white/10">
-          <Search className="size-5 text-brand-500" />
+      <div className="card overflow-hidden border border-border shadow-2xl bg-card text-card-foreground">
+        <div className="flex items-center gap-3 border-b border-border px-5">
+          <Search className="size-5 text-primary" />
           <input
             autoFocus
             value={query}
@@ -132,9 +132,9 @@ export function CommandPalette() {
               }
             }}
             placeholder="Search features, solutions, channel manager, pricing..."
-            className="h-16 flex-1 bg-transparent text-[15px] font-medium outline-none placeholder:text-muted/60 dark:text-white"
+            className="h-16 flex-1 bg-transparent text-[15px] font-medium text-foreground outline-none placeholder:text-muted-foreground/60"
           />
-          <kbd className="hidden rounded-lg border border-line bg-brand-50 px-2 py-1 text-[11px] font-semibold text-muted sm:inline-block dark:border-white/10 dark:bg-white/5">
+          <kbd className="hidden rounded-lg border border-border bg-muted px-2 py-1 text-[11px] font-semibold text-muted-foreground sm:inline-block">
             ESC
           </kbd>
         </div>
@@ -158,8 +158,8 @@ export function CommandPalette() {
                       className={cn(
                         "flex w-full items-center gap-3.5 rounded-2xl p-3 text-left transition",
                         isSelected
-                          ? "bg-gradient-to-r from-brand-600 to-brand-700 text-white shadow-md shadow-brand-700/20"
-                          : "text-ink hover:bg-brand-50 dark:text-white/90 dark:hover:bg-white/5"
+                          ? "bg-primary text-primary-foreground shadow-md"
+                          : "text-foreground hover:bg-muted/60"
                       )}
                     >
                       <span
@@ -167,7 +167,7 @@ export function CommandPalette() {
                           "grid size-10 shrink-0 place-items-center rounded-xl",
                           isSelected
                             ? "bg-white/20 text-white"
-                            : "bg-brand-100 text-brand-700 dark:bg-white/10 dark:text-brand-300"
+                            : "bg-primary/10 text-primary"
                         )}
                       >
                         <IconComponent className="size-5" />
@@ -180,13 +180,13 @@ export function CommandPalette() {
                               "rounded-full px-2 py-0.5 text-[10.5px] font-medium tracking-wide uppercase",
                               isSelected
                                 ? "bg-white/20 text-white"
-                                : "bg-brand-100/70 text-brand-800 dark:bg-white/10 dark:text-brand-300"
+                                : "bg-brand-100/70 text-brand-800"
                             )}
                           >
                             {r.category}
                           </span>
                         </div>
-                        <p className={cn("text-[12px] truncate", isSelected ? "text-white/80" : "text-muted dark:text-white/60")}>
+                        <p className={cn("text-[12px] truncate", isSelected ? "text-white/80" : "text-muted")}>
                           {r.meta}
                         </p>
                       </div>
@@ -199,7 +199,7 @@ export function CommandPalette() {
           )}
         </div>
 
-        <div className="flex items-center justify-between border-t border-line bg-brand-50/50 px-4 py-2.5 text-[11.5px] text-muted dark:border-white/10 dark:bg-white/5">
+        <div className="flex items-center justify-between border-t border-line bg-brand-50/50 px-4 py-2.5 text-[11.5px] text-muted">
           <span>Navigate with <kbd className="rounded border px-1">↑</kbd> <kbd className="rounded border px-1">↓</kbd></span>
           <span className="flex items-center gap-1">Select <CornerDownLeft className="size-3" /></span>
         </div>

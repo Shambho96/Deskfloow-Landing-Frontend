@@ -46,9 +46,9 @@ export function RoiCalculator() {
   }, [rooms, adr, occupancy, otaShare]);
 
   return (
-    <section className="py-24 sm:py-32 bg-white dark:bg-[#0f0524] relative overflow-hidden" id="roi-calculator">
+    <section className="py-24 sm:py-32 bg-background relative overflow-hidden" id="roi-calculator">
       <div className="grid-bg pointer-events-none absolute inset-0 -z-10 [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_70%)]" />
-      <div className="pointer-events-none absolute top-1/2 left-1/2 -z-10 h-[500px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-500/15 blur-[120px]" />
+      <div className="pointer-events-none absolute top-1/2 left-1/2 -z-10 h-[500px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/10 blur-[120px]" />
 
       <div className="container-x">
         <SectionHeading
@@ -58,22 +58,22 @@ export function RoiCalculator() {
           lead="Calculate how much you can save in OTA commissions and staff hours by modernizing with DeskFloow."
         />
 
-        <div className="mx-auto mt-14 max-w-5xl card overflow-hidden border border-brand-200/80 dark:border-white/10 shadow-2xl">
+        <div className="mx-auto mt-14 max-w-5xl card overflow-hidden border border-border shadow-2xl">
           <div className="grid lg:grid-cols-[1.3fr_1fr]">
             {/* Sliders Input Panel */}
-            <div className="p-8 sm:p-10 space-y-7 border-b lg:border-b-0 lg:border-r border-line dark:border-white/10">
-              <div className="flex items-center gap-2 pb-2 border-b border-line dark:border-white/10">
-                <Calculator className="size-5 text-brand-600 dark:text-brand-400" />
-                <h3 className="text-[17px] font-bold text-ink dark:text-white">Your Property Parameters</h3>
+            <div className="p-8 sm:p-10 space-y-7 border-b lg:border-b-0 lg:border-r border-border">
+              <div className="flex items-center gap-2 pb-2 border-b border-border">
+                <Calculator className="size-5 text-primary" />
+                <h3 className="text-[17px] font-bold text-foreground">Your Property Parameters</h3>
               </div>
 
               {/* Slider 1: Rooms */}
               <div>
                 <div className="flex justify-between items-center mb-2">
-                  <label htmlFor="roi-rooms" className="text-[14px] font-semibold text-ink dark:text-white">
+                  <label htmlFor="roi-rooms" className="text-[14px] font-semibold text-foreground">
                     Sellable Rooms:
                   </label>
-                  <span className="rounded-lg bg-brand-100/80 dark:bg-white/10 px-3 py-1 text-[15px] font-bold text-brand-700 dark:text-brand-300">
+                  <span className="rounded-lg bg-primary/10 px-3 py-1 text-[15px] font-bold text-primary">
                     {rooms} rooms
                   </span>
                 </div>
@@ -85,9 +85,9 @@ export function RoiCalculator() {
                   step={5}
                   value={rooms}
                   onChange={(e) => setRooms(Number(e.target.value))}
-                  className="w-full h-2 rounded-lg bg-brand-100 accent-brand-600 cursor-pointer dark:bg-white/10"
+                  className="w-full h-2 rounded-lg bg-muted accent-primary cursor-pointer"
                 />
-                <div className="flex justify-between text-[11px] text-muted mt-1">
+                <div className="flex justify-between text-[11px] text-muted-foreground mt-1">
                   <span>10 rooms</span>
                   <span>100 rooms</span>
                   <span>200 rooms</span>
@@ -97,10 +97,10 @@ export function RoiCalculator() {
               {/* Slider 2: ADR */}
               <div>
                 <div className="flex justify-between items-center mb-2">
-                  <label htmlFor="roi-adr" className="text-[14px] font-semibold text-ink dark:text-white">
+                  <label htmlFor="roi-adr" className="text-[14px] font-semibold text-foreground">
                     Average Daily Rate (ADR):
                   </label>
-                  <span className="rounded-lg bg-brand-100/80 dark:bg-white/10 px-3 py-1 text-[15px] font-bold text-brand-700 dark:text-brand-300">
+                  <span className="rounded-lg bg-primary/10 px-3 py-1 text-[15px] font-bold text-primary">
                     {inr(adr)} / night
                   </span>
                 </div>
@@ -112,9 +112,9 @@ export function RoiCalculator() {
                   step={500}
                   value={adr}
                   onChange={(e) => setAdr(Number(e.target.value))}
-                  className="w-full h-2 rounded-lg bg-brand-100 accent-brand-600 cursor-pointer dark:bg-white/10"
+                  className="w-full h-2 rounded-lg bg-muted accent-primary cursor-pointer"
                 />
-                <div className="flex justify-between text-[11px] text-muted mt-1">
+                <div className="flex justify-between text-[11px] text-muted-foreground mt-1">
                   <span>₹1,500</span>
                   <span>₹10,000</span>
                   <span>₹20,000</span>
@@ -124,10 +124,10 @@ export function RoiCalculator() {
               {/* Slider 3: Occupancy */}
               <div>
                 <div className="flex justify-between items-center mb-2">
-                  <label htmlFor="roi-occ" className="text-[14px] font-semibold text-ink dark:text-white">
+                  <label htmlFor="roi-occ" className="text-[14px] font-semibold text-foreground">
                     Average Annual Occupancy:
                   </label>
-                  <span className="rounded-lg bg-brand-100/80 dark:bg-white/10 px-3 py-1 text-[15px] font-bold text-brand-700 dark:text-brand-300">
+                  <span className="rounded-lg bg-primary/10 px-3 py-1 text-[15px] font-bold text-primary">
                     {occupancy}%
                   </span>
                 </div>
@@ -139,9 +139,9 @@ export function RoiCalculator() {
                   step={5}
                   value={occupancy}
                   onChange={(e) => setOccupancy(Number(e.target.value))}
-                  className="w-full h-2 rounded-lg bg-brand-100 accent-brand-600 cursor-pointer dark:bg-white/10"
+                  className="w-full h-2 rounded-lg bg-muted accent-primary cursor-pointer"
                 />
-                <div className="flex justify-between text-[11px] text-muted mt-1">
+                <div className="flex justify-between text-[11px] text-muted-foreground mt-1">
                   <span>40%</span>
                   <span>70%</span>
                   <span>95%</span>
@@ -151,10 +151,10 @@ export function RoiCalculator() {
               {/* Slider 4: OTA Share */}
               <div>
                 <div className="flex justify-between items-center mb-2">
-                  <label htmlFor="roi-ota" className="text-[14px] font-semibold text-ink dark:text-white">
+                  <label htmlFor="roi-ota" className="text-[14px] font-semibold text-foreground">
                     Share of Bookings from OTAs:
                   </label>
-                  <span className="rounded-lg bg-brand-100/80 dark:bg-white/10 px-3 py-1 text-[15px] font-bold text-brand-700 dark:text-brand-300">
+                  <span className="rounded-lg bg-primary/10 px-3 py-1 text-[15px] font-bold text-primary">
                     {otaShare}%
                   </span>
                 </div>
@@ -166,9 +166,9 @@ export function RoiCalculator() {
                   step={5}
                   value={otaShare}
                   onChange={(e) => setOtaShare(Number(e.target.value))}
-                  className="w-full h-2 rounded-lg bg-brand-100 accent-brand-600 cursor-pointer dark:bg-white/10"
+                  className="w-full h-2 rounded-lg bg-muted accent-primary cursor-pointer"
                 />
-                <div className="flex justify-between text-[11px] text-muted mt-1">
+                <div className="flex justify-between text-[11px] text-muted-foreground mt-1">
                   <span>25% (Mostly direct)</span>
                   <span>60%</span>
                   <span>90% (Heavy OTA dependency)</span>

@@ -21,12 +21,12 @@ export default function LoginPage() {
           <Logo height={42} />
         </Link>
         
-        <div className="card mt-8 p-8 shadow-2xl border border-brand-200/80 dark:border-white/10">
-          <span className="grid size-12 place-items-center rounded-2xl bg-brand-100 text-brand-700 dark:bg-white/10 dark:text-brand-300">
+        <div className="card mt-8 p-8 shadow-2xl border border-brand-200/80">
+          <span className="grid size-12 place-items-center rounded-2xl bg-brand-100 text-brand-700">
             <KeyRound className="size-6" aria-hidden />
           </span>
-          <h1 className="mt-5 text-[26px] font-bold tracking-tight text-ink dark:text-white">Staff Portal Login</h1>
-          <p className="mt-1.5 text-[14.5px] leading-relaxed text-muted dark:text-white/70">
+          <h1 className="mt-5 text-[26px] font-bold tracking-tight text-ink">Staff Portal Login</h1>
+          <p className="mt-1.5 text-[14.5px] leading-relaxed text-muted">
             Enter your property credentials to access your front desk, tape chart, and housekeeping console.
           </p>
 

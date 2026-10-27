@@ -38,7 +38,7 @@ export default function HomePage() {
             <PricingCards />
           </div>
           <p className="mt-8 text-center text-[14px]">
-            <Link href="/pricing" className="font-semibold text-brand-600 hover:text-brand-700 hover:underline dark:text-brand-400">
+            <Link href="/pricing" className="font-semibold text-brand-600 hover:text-brand-700 hover:underline">
               Compare complete feature breakdown across all tiers →
             </Link>
           </p>

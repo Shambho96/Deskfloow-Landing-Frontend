@@ -36,12 +36,3 @@ export function ResBadge({ status, className }: { status: ReservationStatus; cla
     </span>
   );
 }
-
-export function DemoBadge({ children = "Demo data", className }: { children?: string; className?: string }) {
-  return (
-    <span className={cn("demo-badge", className)}>
-      <span className="size-1.5 rounded-full bg-gold-500" aria-hidden />
-      {children}
-    </span>
-  );
-}

@@ -87,7 +87,7 @@ export default function SolutionsPage() {
               <div className="relative aspect-[4/3] overflow-hidden rounded-[28px] shadow-lift">
                 <Image src={s.image} alt={s.alt} fill sizes="(min-width: 1024px) 600px, 100vw" className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-tr from-brand-950/50 via-transparent to-transparent" />
-                <span className="absolute bottom-4 left-4 rounded-full bg-white/90 px-3.5 py-1 text-[12px] font-semibold text-brand-800 backdrop-blur dark:bg-[#150729]/90 dark:text-brand-300 dark:border dark:border-white/10">
+                <span className="absolute bottom-4 left-4 rounded-full bg-white/90 px-3.5 py-1 text-[12px] font-semibold text-brand-800 backdrop-blur shadow-sm">
                   Tailored for {s.who}
                 </span>
               </div>
@@ -98,10 +98,10 @@ export default function SolutionsPage() {
               <ul className="mt-6 space-y-3">
                 {s.points.map((p) => (
                   <li key={p} className="flex gap-3 text-[15px]">
-                    <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-brand-100 text-brand-700 dark:bg-white/10 dark:text-brand-300">
+                    <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-brand-100 text-brand-700">
                       <Check className="size-3" strokeWidth={3} />
                     </span>
-                    <span className="text-ink dark:text-white/90">{p}</span>
+                    <span className="text-ink">{p}</span>
                   </li>
                 ))}
               </ul>

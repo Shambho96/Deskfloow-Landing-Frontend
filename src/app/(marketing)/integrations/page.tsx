@@ -72,7 +72,7 @@ export default function IntegrationsPage() {
 
       <section id="architecture" className="scroll-mt-24 bg-brand-950 py-20 text-white">
         <div className="container-x">
-          <SectionHeading tone="dark" eyebrow="Architecture" title="How production integrations will work." lead="Designed so mock services in the demo can be replaced by real ones behind the same typed interfaces." />
+          <SectionHeading tone="inverted" eyebrow="Architecture" title="How production integrations will work." lead="Designed so mock services in the demo can be replaced by real ones behind the same typed interfaces." />
           <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {architecture.map((a) => (
               <div key={a.title} className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">

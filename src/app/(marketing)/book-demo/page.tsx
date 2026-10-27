@@ -40,12 +40,12 @@ export default function BookDemoPage() {
               priority
             />
             <div className="absolute inset-0 bg-gradient-to-t from-brand-950/80 via-transparent to-transparent" />
-            <div className="absolute inset-x-4 bottom-4 rounded-2xl bg-white/90 p-4.5 backdrop-blur dark:bg-[#160a2c]/90 dark:border dark:border-white/10">
-              <div className="flex items-center gap-2 text-brand-700 dark:text-brand-300">
+            <div className="absolute inset-x-4 bottom-4 rounded-2xl bg-white/90 p-4.5 backdrop-blur shadow-md">
+              <div className="flex items-center gap-2 text-brand-700">
                 <Sparkles className="size-4 text-gold-500" />
                 <p className="text-[13px] font-bold">1-on-1 Hospitality Consultation</p>
               </div>
-              <p className="mt-1 text-[12.5px] text-muted dark:text-white/70">
+              <p className="mt-1 text-[12.5px] text-muted">
                 Prefer immediate answers? Our team is available for quick phone or WhatsApp consultations.
               </p>
               <ButtonLink href="/contact" size="sm" variant="secondary" className="mt-3">
@@ -54,10 +54,10 @@ export default function BookDemoPage() {
             </div>
           </div>
 
-          <h2 className="mt-8 text-[20px] font-bold text-ink dark:text-white">What you will experience</h2>
+          <h2 className="mt-8 text-[20px] font-bold text-ink">What you will experience</h2>
           <ul className="mt-4 space-y-3">
             {expect.map((e) => (
-              <li key={e} className="flex gap-3 text-[14.5px] text-muted dark:text-white/80">
+              <li key={e} className="flex gap-3 text-[14.5px] text-muted">
                 <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-success/15 text-success">
                   <Check className="size-3.5" aria-hidden />
                 </span>
@@ -66,9 +66,9 @@ export default function BookDemoPage() {
             ))}
           </ul>
 
-          <div className="mt-8 rounded-2xl border border-line bg-brand-50/60 p-4 text-[13px] text-muted dark:border-white/10 dark:bg-white/5">
-            <p className="flex items-center gap-2 font-medium text-ink dark:text-white">
-              <ShieldCheck className="size-4 text-brand-600 dark:text-brand-400" /> No commitment required
+          <div className="mt-8 rounded-2xl border border-line bg-brand-50/60 p-4 text-[13px] text-muted">
+            <p className="flex items-center gap-2 font-medium text-ink">
+              <ShieldCheck className="size-4 text-brand-600" /> No commitment required
             </p>
             <p className="mt-1">
               Demos take 25–35 minutes over Google Meet or Zoom. We will show real workflow scenarios matching your current software stack.

@@ -26,12 +26,12 @@ export default function FeaturesPage() {
           <ButtonLink href="/contact" variant="secondary">Speak with a Specialist</ButtonLink>
         </div>
       </PageHero>
-      <nav aria-label="Modules" className="sticky top-[68px] z-30 border-y border-line bg-white/85 backdrop-blur-xl">
+      <nav aria-label="Modules" className="sticky top-[68px] z-30 border-y border-border bg-card/85 text-card-foreground backdrop-blur-xl">
         <ul className="container-x flex gap-1 overflow-x-auto py-2 scrollbar-thin">
           {platformNav.map((n) => (
             <li key={n.href}>
-              <Link href={n.href} className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[13px] whitespace-nowrap text-ink/75 hover:bg-brand-50 hover:text-ink">
-                <n.icon className="size-3.5 text-brand-500" /> {n.label}
+              <Link href={n.href} className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[13px] whitespace-nowrap text-foreground/75 hover:bg-muted hover:text-foreground">
+                <n.icon className="size-3.5 text-primary" /> {n.label}
               </Link>
             </li>
           ))}

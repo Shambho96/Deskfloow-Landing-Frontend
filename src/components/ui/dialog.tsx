@@ -41,13 +41,13 @@ export function Dialog({
       onClick={(e) => e.target === ref.current && onClose()}
       aria-label={title}
       className={cn(
-        "m-auto max-h-[90vh] w-[min(560px,calc(100vw-24px))] overflow-visible rounded-2xl bg-transparent p-0 text-ink backdrop:bg-brand-950/40 backdrop:backdrop-blur-sm open:animate-[dlg_.22s_ease-out] dark:text-white",
+        "m-auto max-h-[90vh] w-[min(560px,calc(100vw-24px))] overflow-visible rounded-2xl bg-transparent p-0 text-ink backdrop:bg-brand-950/40 backdrop:backdrop-blur-sm open:animate-[dlg_.22s_ease-out]",
         side === "right" && "mr-0 h-dvh max-h-dvh w-[min(440px,100vw)] rounded-none rounded-l-2xl",
         className,
       )}
     >
       <div className={cn("card flex max-h-[inherit] flex-col overflow-hidden", side === "right" && "h-full rounded-none rounded-l-2xl")}>
-        <header className="flex items-start justify-between gap-4 border-b border-line px-5 py-4 dark:border-white/10">
+        <header className="flex items-start justify-between gap-4 border-b border-line px-5 py-4">
           <div>
             <h2 className="text-[17px] font-semibold tracking-tight">{title}</h2>
             {description && <p className="mt-0.5 text-[13px] text-muted">{description}</p>}

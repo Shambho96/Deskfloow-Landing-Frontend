@@ -19,3 +19,4 @@ export const demoGuests: Guest[] = [
 ];
 
 export const guestById = (id: string) => demoGuests.find((g) => g.id === id);
+export const guestOf = (id: string) => guestById(id) ?? { id, name: "Guest", phone: "", email: "", city: "", preferences: [], lifetimeSpend: 0, stays: 1 };
