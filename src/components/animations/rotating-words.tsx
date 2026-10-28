@@ -22,21 +22,21 @@ export function RotatingWords({ words, className, interval = 2600 }: { words: st
 
   return (
     <span
-      className={cn("relative inline-grid overflow-hidden align-bottom", className)}
+      className="relative inline-grid overflow-hidden py-1 -my-1 align-bottom"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       aria-live="polite"
     >
       {/* sizing ghosts */}
       {words.map((w) => (
-        <span key={w} className="invisible col-start-1 row-start-1" aria-hidden>
+        <span key={w} className="invisible col-start-1 row-start-1 py-0.5" aria-hidden>
           {w}
         </span>
       ))}
       <AnimatePresence mode="popLayout" initial={false}>
         <motion.span
           key={words[i]}
-          className="col-start-1 row-start-1"
+          className={cn("col-start-1 row-start-1 py-0.5", className)}
           initial={{ y: "100%", opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: "-100%", opacity: 0 }}

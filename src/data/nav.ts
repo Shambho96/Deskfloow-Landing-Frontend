@@ -23,7 +23,6 @@ export const platformNav: NavItem[] = [
 ];
 
 export const mainNav = [
-  { label: "Features", href: "/features" },
   { label: "Solutions", href: "/solutions" },
   { label: "Integrations", href: "/integrations" },
   { label: "Pricing", href: "/pricing" },

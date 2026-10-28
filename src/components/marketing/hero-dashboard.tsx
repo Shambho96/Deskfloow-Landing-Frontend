@@ -65,7 +65,7 @@ export function HeroDashboard() {
         <div className="grid grid-cols-[52px_1fr]">
           <aside className="flex flex-col items-center gap-3 border-r border-border bg-muted/20 py-4">
             {[LayoutDashboard, CalendarCheck, BedDouble, UsersRound, MessageCircle, UtensilsCrossed].map((I, i) => (
-              <span key={i} className={cn("grid size-8 place-items-center rounded-lg text-muted", i === 0 && "bg-brand-600 text-white shadow-md")}>
+              <span key={i} className={cn("grid size-8 place-items-center rounded-lg text-muted-foreground", i === 0 && "bg-brand-600 text-white shadow-md")}>
                 <I className="size-4" />
               </span>
             ))}
@@ -75,7 +75,7 @@ export function HeroDashboard() {
             {/* KPI row */}
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
               <motion.div variants={item} className="relative rounded-xl border border-gold-300 bg-gradient-to-br from-white to-gold-100/60 p-3 shadow-glow">
-                <p className="text-[11px] font-medium text-muted">Occupancy</p>
+                <p className="text-[11px] font-medium text-muted-foreground">Occupancy</p>
                 <p className="mt-1 text-[24px] font-semibold tracking-tight text-ink">{snap.occupancy}%</p>
                 <div className="mt-2 h-1.5 rounded-full bg-brand-100">
                   <motion.div className="h-full rounded-full bg-gradient-to-r from-brand-500 to-gold-400" initial={{ width: 0 }} animate={{ width: `${snap.occupancy}%` }} transition={{ delay: 1, duration: 1.2 }} />
@@ -91,7 +91,7 @@ export function HeroDashboard() {
               <motion.div variants={item} className="rounded-xl border border-line bg-white p-3">
                 <div className="flex items-center justify-between">
                   <p className="text-[12px] font-semibold text-ink">Revenue · last 7 days</p>
-                  <span className="text-[10.5px] text-muted">INR</span>
+                  <span className="text-[10.5px] text-muted-foreground">INR</span>
                 </div>
                 <div className="mt-3 flex h-20 items-end gap-1.5">
                   {revenue.map((v, i) => (
@@ -114,7 +114,7 @@ export function HeroDashboard() {
                           {r.number}
                           <span className={cn("size-1.5 rounded-full", hkMeta[r.housekeeping].dot)} />
                         </div>
-                        <div className="text-muted">{occ ? "Occupied" : hkMeta[r.housekeeping].label}</div>
+                        <div className="text-muted-foreground">{occ ? "Occupied" : hkMeta[r.housekeeping].label}</div>
                       </div>
                     );
                   })}
@@ -128,7 +128,7 @@ export function HeroDashboard() {
                     {snap.arrivals.map((r) => (
                       <li key={r.id} className="flex items-center justify-between text-[11.5px]">
                         <span className="truncate text-ink">{guestById(r.guestId)?.name}</span>
-                        <span className="text-muted">{r.source}</span>
+                        <span className="text-muted-foreground">{r.source}</span>
                       </li>
                     ))}
                   </ul>
@@ -145,7 +145,7 @@ export function HeroDashboard() {
                   <span className="flex items-center gap-2 font-medium text-ink">
                     <RefreshCw className="size-3.5 animate-spin text-brand-500 [animation-duration:3s]" /> OTA sync
                   </span>
-                  <span className="text-muted">5 channels · demo</span>
+                  <span className="text-muted-foreground">5 channels · demo</span>
                 </motion.div>
                 <motion.div variants={item} className="flex flex-wrap gap-1.5 rounded-xl border border-line bg-white p-3">
                   {(["clean", "cleaning", "dirty"] as const).map((s) => (
@@ -184,7 +184,7 @@ export function HeroDashboard() {
             </span>
             <span>
               <span className="block text-[13px] font-semibold text-ink">{note.title}</span>
-              <span className="block text-[11.5px] text-muted">{note.meta}</span>
+              <span className="block text-[11.5px] text-muted-foreground">{note.meta}</span>
             </span>
           </motion.div>
         </AnimatePresence>
@@ -204,7 +204,7 @@ export function HeroDashboard() {
 function Kpi({ label, value, icon: Icon }: { label: string; value: string; icon: typeof TrendingUp }) {
   return (
     <motion.div variants={item} className="rounded-xl border border-line bg-white p-3">
-      <p className="flex items-center justify-between text-[11px] font-medium text-muted">
+      <p className="flex items-center justify-between text-[11px] font-medium text-muted-foreground">
         {label} <Icon className="size-3.5 text-brand-400" />
       </p>
       <p className="mt-1 text-[22px] font-semibold tracking-tight text-ink">{value}</p>

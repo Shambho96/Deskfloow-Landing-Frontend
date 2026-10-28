@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/layout/page-hero";
+import { FeatureBento } from "@/components/marketing/feature-bento";
 import { FeaturePillars } from "@/components/marketing/pillars";
 import { FinalCta } from "@/components/marketing/final-cta";
 import { ButtonLink } from "@/components/ui/button";
@@ -17,7 +18,7 @@ export default function FeaturesPage() {
     <>
       <PageHero
         crumbs={[{ label: "Features" }]}
-        eyebrow="Platform"
+        eyebrow="Features"
         title="Every hotel operation, on one connected record."
         lead="Explore DeskFloow's unified platform capabilities: front desk operations, visual tape charts, 2-way OTA distribution, automated WhatsApp concierge, smart housekeeping, and revenue analytics."
       >
@@ -37,6 +38,7 @@ export default function FeaturesPage() {
           ))}
         </ul>
       </nav>
+      <FeatureBento />
       <FeaturePillars />
       <FinalCta />
     </>

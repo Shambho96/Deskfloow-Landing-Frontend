@@ -72,6 +72,7 @@
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
+  --text-color-muted: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
@@ -216,10 +217,10 @@ img {
     @apply inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1 text-[12px] font-semibold tracking-wide text-primary shadow-sm backdrop-blur;
   }
   .h-display {
-    @apply text-[44px] leading-[0.98] font-bold tracking-[-0.035em] sm:text-[64px] lg:text-[78px];
+    @apply text-[40px] leading-[1.15] font-bold tracking-[-0.03em] sm:text-[58px] lg:text-[68px];
   }
   .h-section {
-    @apply text-[32px] leading-[1.05] font-bold tracking-[-0.03em] text-balance sm:text-[44px];
+    @apply text-[32px] leading-[1.12] font-bold tracking-[-0.03em] text-balance sm:text-[44px];
   }
   .lead {
     @apply text-[17px] leading-relaxed text-muted-foreground text-pretty sm:text-[18px];
@@ -245,5 +246,11 @@ img {
   .scrollbar-thin {
     scrollbar-width: thin;
     scrollbar-color: var(--border) transparent;
+  }
+}
+
+@layer utilities {
+  .text-muted {
+    color: var(--muted-foreground);
   }
 }

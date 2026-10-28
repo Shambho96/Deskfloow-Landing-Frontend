@@ -28,7 +28,7 @@ export function Comparison() {
         <SectionHeading align="center" eyebrow="Why unified matters" title="Fewer tools. Fewer handoffs. One source of truth." lead="A neutral look at the difference between running a hotel on disconnected tools and running it from one connected workspace." />
         <div className="mt-14 grid gap-5 md:grid-cols-2">
           <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.6 }} className="rounded-3xl border border-line bg-white p-7">
-            <p className="text-[13px] font-semibold tracking-wide text-muted uppercase">Traditional fragmented workflow</p>
+            <p className="text-[13px] font-semibold tracking-wide text-muted-foreground uppercase">Traditional fragmented workflow</p>
             <ul className="mt-6 space-y-3.5">
               {fragmented.map((t, i) => (
                 <motion.li key={t} initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 + i * 0.07 }} className="flex items-center gap-3 text-[15px] text-ink/70">
@@ -58,7 +58,7 @@ export function Comparison() {
             <thead>
               <tr className="border-b border-line bg-brand-50/60">
                 <th scope="col" className="px-5 py-4 font-semibold">Area</th>
-                <th scope="col" className="px-5 py-4 font-semibold text-muted">Fragmented workflow</th>
+                <th scope="col" className="px-5 py-4 font-semibold text-muted-foreground">Fragmented workflow</th>
                 <th scope="col" className="px-5 py-4 font-semibold text-brand-700">DeskFloow</th>
               </tr>
             </thead>
@@ -66,7 +66,7 @@ export function Comparison() {
               {rows.map(([a, b, c]) => (
                 <tr key={a} className="border-b border-line last:border-0">
                   <th scope="row" className="px-5 py-3.5 font-medium">{a}</th>
-                  <td className="px-5 py-3.5 text-muted"><span className="flex gap-2"><X className="mt-0.5 size-4 shrink-0 text-danger" aria-hidden />{b}</span></td>
+                  <td className="px-5 py-3.5 text-muted-foreground"><span className="flex gap-2"><X className="mt-0.5 size-4 shrink-0 text-danger" aria-hidden />{b}</span></td>
                   <td className="px-5 py-3.5"><span className="flex gap-2"><Check className="mt-0.5 size-4 shrink-0 text-brand-600" aria-hidden />{c}</span></td>
                 </tr>
               ))}

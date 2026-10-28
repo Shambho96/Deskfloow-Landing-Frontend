@@ -30,7 +30,7 @@ export function WordReveal({
               <span
                 key={word + delay}
                 className={cn(
-                  "inline-block pr-[0.22em] [animation:wr_0.8s_cubic-bezier(0.22,1,0.36,1)_both]",
+                  "inline-block py-[0.08em] pr-[0.22em] [animation:wr_0.8s_cubic-bezier(0.22,1,0.36,1)_both]",
                   hl && "bg-gradient-to-r from-brand-600 via-brand-500 to-gold-500 bg-clip-text text-transparent",
                 )}
                 style={{ animationDelay: `${delay}s` }}

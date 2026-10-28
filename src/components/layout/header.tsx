@@ -10,7 +10,7 @@ import { ButtonLink } from "@/components/ui/button";
 import { mainNav, platformNav, resourcesNav } from "@/data/nav";
 import { cn } from "@/lib/utils";
 
-type MenuKey = "platform" | "resources" | null;
+type MenuKey = "features" | "resources" | null;
 
 export function Header() {
   const pathname = usePathname();
@@ -71,18 +71,18 @@ export function Header() {
 
         {/* Desktop Primary Navigation */}
         <nav aria-label="Primary" className="hidden items-center gap-1.5 lg:flex">
-          <div {...hover("platform")} className="relative">
-            <button
-              aria-expanded={menu === "platform"}
-              aria-controls="mega-platform"
-              onClick={() => setMenu(menu === "platform" ? null : "platform")}
+          <div {...hover("features")} className="relative">
+            <Link
+              href="/features"
+              aria-expanded={menu === "features"}
+              aria-controls="mega-features"
               className={cn(
                 "flex items-center gap-1.5 rounded-full px-4 py-2 text-[14px] font-medium text-foreground/80 transition hover:bg-muted hover:text-foreground",
-                menu === "platform" && "bg-muted text-foreground",
+                (menu === "features" || pathname.startsWith("/features")) && "bg-primary/10 text-primary font-semibold",
               )}
             >
-              Platform <ChevronDown className={cn("size-3.5 transition-transform duration-200", menu === "platform" && "rotate-180")} />
-            </button>
+              Features <ChevronDown className={cn("size-3.5 transition-transform duration-200", menu === "features" && "rotate-180")} />
+            </Link>
           </div>
 
           {mainNav.map((l) => (
@@ -159,12 +159,12 @@ export function Header() {
           </button>
         </div>
 
-        {/* Mega Menu Dropdown for Platform */}
+        {/* Mega Menu Dropdown for Features */}
         <AnimatePresence>
-          {menu === "platform" && (
+          {menu === "features" && (
             <motion.div
-              id="mega-platform"
-              {...hover("platform")}
+              id="mega-features"
+              {...hover("features")}
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 8 }}
@@ -243,7 +243,7 @@ export function Header() {
               </div>
               <div className="flex-1 overflow-y-auto p-5 space-y-6">
                 <div>
-                  <p className="mb-2 text-[11px] font-bold tracking-widest text-muted-foreground uppercase">Platform</p>
+                  <p className="mb-2 text-[11px] font-bold tracking-widest text-muted-foreground uppercase">Features</p>
                   <div className="grid gap-1">
                     {platformNav.map((n) => (
                       <Link

@@ -317,12 +317,14 @@ export function FeaturePillars() {
       <FrontDeskPillar />
       <TapeChartPillar />
       <ChannelsPillar />
+      <BookingPillar />
       <WhatsAppPillar />
-      <OrdersPillar />
-      <HousekeepingPillar />
       <CrmPillar />
+      <HousekeepingPillar />
+      <OrdersPillar />
       <FoliosPillar />
       <MultiPropertyPillar />
+      <TourPillar />
     </>
   );
 }

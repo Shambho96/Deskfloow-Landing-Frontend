@@ -38,13 +38,13 @@ export function Hero() {
 
           <h1 className="h-display mt-6 text-ink">
             <WordReveal
-              lines={["Your Entire Hotel.", "Finally in Flow."]}
-              highlight={["Flow."]}
+              lines={["An Intelligent Hotel", "Operations Platform"]}
+              highlight={["Intelligent", "Operations"]}
               baseDelay={0.15}
             />
           </h1>
 
-          <p className="mx-auto mt-6 max-w-2xl text-[18px] leading-relaxed text-muted sm:text-[20px] [animation:wr_0.8s_0.75s_cubic-bezier(0.22,1,0.36,1)_both]">
+          <p className="mx-auto mt-6 max-w-2xl text-[18px] leading-relaxed text-muted-foreground sm:text-[20px] [animation:wr_0.8s_0.75s_cubic-bezier(0.22,1,0.36,1)_both]">
             One intelligent cloud platform for every room, reservation, guest, and operation. Connect your front desk,
             interactive tape chart, 2-way OTA channels, WhatsApp guest journeys, and revenue in one unified workspace.
           </p>

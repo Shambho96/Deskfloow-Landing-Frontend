@@ -129,7 +129,7 @@ export function HospitalityExperience() {
                   <h3 className="mt-2 text-[26px] font-bold leading-tight tracking-tight text-ink sm:text-[34px]">
                     {active.title}
                   </h3>
-                  <p className="mt-4 text-[15.5px] leading-relaxed text-muted">
+                  <p className="mt-4 text-[15.5px] leading-relaxed text-muted-foreground">
                     {active.description}
                   </p>
 
@@ -149,7 +149,7 @@ export function HospitalityExperience() {
                       <div key={m.label} className="rounded-xl bg-brand-50/80 p-3.5">
                         <p className="text-[24px] font-bold tracking-tight text-brand-700">{m.val}</p>
                         <p className="text-[12px] font-semibold text-ink">{m.label}</p>
-                        <p className="text-[11px] text-muted">{m.sub}</p>
+                        <p className="text-[11px] text-muted-foreground">{m.sub}</p>
                       </div>
                     ))}
                   </div>

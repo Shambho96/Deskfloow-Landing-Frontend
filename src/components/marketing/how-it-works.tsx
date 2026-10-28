@@ -20,7 +20,7 @@ function Mini({ i }: { i: number }) {
   if (i === 0)
     return (
       <div className={base}>
-        <p className="mb-3 text-[12px] font-semibold text-muted">Floor 2 · 4 rooms</p>
+        <p className="mb-3 text-[12px] font-semibold text-muted-foreground">Floor 2 · 4 rooms</p>
         <div className="grid grid-cols-4 gap-2">
           {["201", "202", "203", "204"].map((n, k) => (
             <motion.div key={n} initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: k * 0.08 }} className="rounded-lg border border-brand-200 bg-brand-50 py-4 text-center text-[13px] font-semibold">{n}</motion.div>
@@ -44,7 +44,7 @@ function Mini({ i }: { i: number }) {
       <div className={base}>
         <div className="flex items-center gap-3">
           <span className="grid size-11 place-items-center rounded-full bg-brand-600 text-[14px] font-semibold text-white">VS</span>
-          <div><p className="text-[14px] font-semibold">Vikram Singh</p><p className="text-[12px] text-muted">11 stays · Platinum</p></div>
+          <div><p className="text-[14px] font-semibold">Vikram Singh</p><p className="text-[12px] text-muted-foreground">11 stays · Platinum</p></div>
         </div>
         <div className="mt-3 space-y-1.5 text-[12.5px]">
           <p className="rounded-lg bg-brand-50 px-3 py-2">RSV-1043 · Room 104 · Corporate</p>
@@ -63,7 +63,7 @@ function Mini({ i }: { i: number }) {
     );
   return (
     <div className={base}>
-      <p className="text-[12px] font-semibold text-muted">Occupancy · 7 days</p>
+      <p className="text-[12px] font-semibold text-muted-foreground">Occupancy · 7 days</p>
       <div className="mt-3 flex h-28 items-end gap-2">
         {[62, 68, 64, 74, 81, 92, 75].map((v, k) => (
           <motion.div key={k} initial={{ height: 0 }} animate={{ height: `${v}%` }} transition={{ delay: k * 0.05 }} className={cn("flex-1 rounded-t-md", k === 5 ? "bg-gold-400" : "bg-brand-400")} />
@@ -85,9 +85,9 @@ function Step({ i, onActive, active }: { i: number; onActive: (i: number) => voi
       <span className={cn("absolute top-0 left-0 grid size-10 place-items-center rounded-xl border-2 bg-white transition", active ? "border-gold-400 text-gold-600 shadow-glow" : "border-brand-200 text-brand-500")}>
         <s.icon className="size-4.5" />
       </span>
-      <p className="text-[12px] font-semibold tracking-widest text-muted uppercase">Step {i + 1}</p>
+      <p className="text-[12px] font-semibold tracking-widest text-muted-foreground uppercase">Step {i + 1}</p>
       <h3 className={cn("mt-1 text-[22px] leading-tight font-semibold tracking-tight transition-colors", active ? "text-ink" : "text-ink/55")}>{s.title}</h3>
-      <p className="mt-2 max-w-md text-[15px] text-muted">{s.text}</p>
+      <p className="mt-2 max-w-md text-[15px] text-muted-foreground">{s.text}</p>
       {/* On small screens the mini UI sits inline with its step */}
       <div className="mt-5 lg:hidden"><Mini i={i} /></div>
       {active && <Check className="sr-only" aria-label="Current step" />}
@@ -119,7 +119,7 @@ export function HowItWorks() {
                   <Mini i={active} />
                 </motion.div>
               </AnimatePresence>
-              <p className="mt-3 text-center text-[12px] text-muted">Illustrative interface · demo data</p>
+              <p className="mt-3 text-center text-[12px] text-muted-foreground">Illustrative interface · demo data</p>
             </div>
           </div>
         </div>

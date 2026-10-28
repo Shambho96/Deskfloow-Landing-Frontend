@@ -10,7 +10,7 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "DeskFloow — Hotel PMS, Channel Manager & Front Desk Platform",
+    default: "DeskFloow — An Intelligent Hotel Operations Platform",
     template: "%s · DeskFloow",
   },
   description:
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "DeskFloow",
-    title: "DeskFloow — Your entire hotel, finally in flow",
+    title: "DeskFloow — An Intelligent Hotel Operations Platform",
     description: "One intelligent platform for every room, reservation, guest and operation.",
     images: [{ url: "/images/lobby.jpg", width: 1376, height: 768, alt: "Hotel reception desk at dusk" }],
   },
