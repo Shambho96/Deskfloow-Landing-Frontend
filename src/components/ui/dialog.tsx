@@ -50,11 +50,11 @@ export function Dialog({
         <header className="flex items-start justify-between gap-4 border-b border-line px-5 py-4">
           <div>
             <h2 className="text-[17px] font-semibold tracking-tight">{title}</h2>
-            {description && <p className="mt-0.5 text-[13px] text-muted">{description}</p>}
+            {description && <p className="mt-0.5 text-[13px] text-muted-foreground">{description}</p>}
           </div>
           <button
             onClick={onClose}
-            className="rounded-full p-1.5 text-muted transition hover:bg-brand-100 hover:text-ink"
+            className="rounded-full p-1.5 text-muted-foreground transition hover:bg-brand-100 hover:text-ink"
             aria-label="Close dialog"
           >
             <X className="size-4" />

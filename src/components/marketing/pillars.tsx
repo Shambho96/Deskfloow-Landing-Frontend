@@ -8,7 +8,7 @@ import { TapeChart } from "@/components/dashboard/tape-chart";
 import { FloorPlan } from "@/components/dashboard/floor-plan";
 import { GuestCrm } from "@/components/dashboard/guest-crm";
 import { FolioView, ShiftRegister } from "@/components/dashboard/folio";
-import { PropertySwitcher, RolePermissions } from "@/components/dashboard/multi-property";
+import { PropertySwitcher } from "@/components/dashboard/multi-property";
 import { WhatsAppInbox, WhatsAppWorkflow } from "@/components/messaging/whatsapp-inbox";
 import { OrderBoard } from "@/components/orders/order-board";
 import { OtaSync } from "./ota-sync";
@@ -118,9 +118,9 @@ export function WhatsAppPillar() {
   return (
     <Pillar
       id="whatsapp"
-      eyebrow="WhatsApp guest automation"
-      title="Every guest conversation, connected to their stay."
-      lead="Engage guests effortlessly through official WhatsApp Business API templates. Deliver instant booking confirmations, digital keys, pre-arrival registration forms, and room service menus with live delivery tracking."
+      eyebrow="WhatsApp booking confirmation campaign service"
+      title="Automated hotel booking confirmations on WhatsApp."
+      lead="Like an automated email campaign service built for hotels, DeskFloow dispatches verified one-way WhatsApp booking confirmation messages the instant a reservation is confirmed — complete with booking ID, stay dates, room type, and live delivery status."
     >
       <WhatsAppInbox />
       <div className="mt-6"><WhatsAppWorkflow /></div>
@@ -157,7 +157,7 @@ export function OrdersPillar() {
       }
     >
       <OrderBoard />
-      <p className="mt-3 text-[12px] text-muted">Integrated POS order routing automatically posts charges to the room master folio.</p>
+      <p className="mt-3 text-[12px] text-muted-foreground">Integrated POS order routing automatically posts charges to the room master folio.</p>
     </Pillar>
   );
 }
@@ -206,7 +206,7 @@ export function BookingPillar() {
               View Commission-Free Plans <ArrowRight className="size-4" />
             </ButtonLink>
           </div>
-          <div className="mt-5 space-y-2 text-[13px] text-muted">
+          <div className="mt-5 space-y-2 text-[13px] text-muted-foreground">
             <p className="flex items-center gap-2">
               <Check className="size-4 text-success" /> 0% commissions on all direct bookings
             </p>
@@ -233,7 +233,7 @@ export function BookingPillar() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-[15px] font-bold text-ink">Royal Heritage Suite</p>
-                  <p className="text-[12px] text-muted">Direct Exclusive Rate · Free Breakfast</p>
+                  <p className="text-[12px] text-muted-foreground">Direct Exclusive Rate · Free Breakfast</p>
                 </div>
                 <p className="text-[17px] font-bold text-brand-700">₹14,500</p>
               </div>
@@ -280,14 +280,11 @@ export function MultiPropertyPillar() {
   return (
     <Pillar
       id="multi-property"
-      eyebrow="Multi-property & staff access"
-      title="One account. Every property. The right access for every role."
-      lead="Manage single boutique hotels or multi-property regional groups with enterprise role-based permissions (Owner, General Manager, Front Desk, Housekeeping) and centralized analytics."
+      eyebrow="Multi-property portfolio"
+      title="One account. Every property in view."
+      lead="Manage single boutique hotels or multi-property regional groups from one master workspace with centralized occupancy, ADR, and live revenue analytics."
     >
-      <div className="space-y-4">
-        <PropertySwitcher />
-        <RolePermissions />
-      </div>
+      <PropertySwitcher />
     </Pillar>
   );
 }

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Logo } from "@/components/ui/logo";
-import { platformNav, resourcesNav } from "@/data/nav";
+import { platformNav } from "@/data/nav";
 
 const cols = [
   { title: "Platform", links: platformNav.map((n) => ({ label: n.label, href: n.href })) },
@@ -22,7 +22,6 @@ const cols = [
       { label: "Integration architecture", href: "/integrations#architecture" },
     ],
   },
-  { title: "Resources", links: [...resourcesNav, { label: "Pricing", href: "/pricing" }] },
 ];
 
 export function Footer() {
@@ -46,7 +45,7 @@ export function Footer() {
             </Link>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
+        <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
           {cols.map((c) => (
             <div key={c.title}>
               <p className="text-[12px] font-semibold tracking-widest text-gold-300/90 uppercase">{c.title}</p>

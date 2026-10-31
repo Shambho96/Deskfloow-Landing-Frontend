@@ -32,7 +32,7 @@ export default function ContactPage() {
               <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-brand-100 text-brand-700"><Icon className="size-5" aria-hidden /></span>
               <div>
                 <h2 className="text-[15px] font-semibold">{title}</h2>
-                <p className="mt-1 text-[14px] leading-relaxed text-muted">{body}</p>
+                <p className="mt-1 text-[14px] leading-relaxed text-muted-foreground">{body}</p>
               </div>
             </div>
           ))}

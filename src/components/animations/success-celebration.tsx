@@ -50,7 +50,7 @@ export function SuccessCelebration({ title, children }: { title: string; childre
       >
         {title}
       </motion.h3>
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="mt-2 max-w-md text-[14.5px] text-muted">
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="mt-2 max-w-md text-[14.5px] text-muted-foreground">
         {children}
       </motion.div>
     </div>

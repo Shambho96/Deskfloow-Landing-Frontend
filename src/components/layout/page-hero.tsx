@@ -22,7 +22,7 @@ export function PageHero({
       <div className="pointer-events-none absolute top-[-160px] left-1/2 -z-10 h-[380px] w-[760px] -translate-x-1/2 rounded-full bg-brand-400/20 blur-[110px]" />
       <div className="container-x pt-10 pb-14 sm:pt-14 sm:pb-20">
         <nav aria-label="Breadcrumb">
-          <ol className="flex flex-wrap items-center gap-1 text-[13px] text-muted">
+          <ol className="flex flex-wrap items-center gap-1 text-[13px] text-muted-foreground">
             <li><Link href="/" className="hover:text-ink">Home</Link></li>
             {crumbs.map((c) => (
               <li key={c.label} className="flex items-center gap-1">

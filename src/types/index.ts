@@ -159,8 +159,6 @@ export interface Channel {
   state: ChannelState;
 }
 
-export type StaffRole = "Owner" | "Manager" | "Front Desk" | "Housekeeping";
-
 export interface ActivityEvent {
   id: string;
   time: string;

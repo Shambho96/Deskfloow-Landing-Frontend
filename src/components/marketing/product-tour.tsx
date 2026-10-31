@@ -24,7 +24,7 @@ export function ProductTour() {
   const [cursor, setCursor] = useState({ x: 40, y: 40 });
   const [clickKey, setClickKey] = useState(0);
   const box = useRef<HTMLDivElement>(null);
-  const inView = useInView(box, { margin: "-120px" });
+  const inView = useInView(box, { amount: 0.1 });
   const reduce = useReducedMotion();
   const finished = done >= steps.length;
   const current = steps[Math.min(done, steps.length - 1)];
@@ -83,7 +83,7 @@ export function ProductTour() {
                 </span>
                 <span>
                   <span className="block text-[14px] font-medium text-ink">{s.title}</span>
-                  <span className="block text-[12.5px] text-muted">{s.text}</span>
+                  <span className="block text-[12.5px] text-muted-foreground">{s.text}</span>
                 </span>
               </button>
             </li>
@@ -107,7 +107,7 @@ export function ProductTour() {
         <div className="grid gap-4 md:grid-cols-[180px_1fr_170px]">
           {/* Room grid */}
           <div>
-            <p className="mb-2 text-[11.5px] font-medium text-muted">Rooms</p>
+            <p className="mb-2 text-[11.5px] font-medium text-muted-foreground">Rooms</p>
             <div className="grid grid-cols-2 gap-1.5">
               {roomsGrid.map((n) => {
                 const sel = n === "203" && done >= 1;
@@ -142,7 +142,7 @@ export function ProductTour() {
               {done >= 2 && (
                 <motion.div key="res" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="rounded-xl border border-line p-3 text-[12.5px]">
                   <p className="font-semibold text-ink">Meera Joshi · 12–14 Nov · Direct Website</p>
-                  <p className="text-muted">2 adults, 1 child · 50% paid · Anniversary</p>
+                  <p className="text-muted-foreground">2 adults, 1 child · 50% paid · Anniversary</p>
                   <button data-tour="profile" onClick={() => act("profile")} className={cn("mt-2 rounded-lg border border-line px-3 py-1.5 font-medium hover:bg-brand-50", isTarget("profile") && "ring-2 ring-gold-400")}>
                     View guest profile
                   </button>
@@ -156,25 +156,25 @@ export function ProductTour() {
                 </motion.div>
               )}
               {done >= 3 && (
-                <motion.div key="wa" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="rounded-xl bg-[#EFEAE2] p-3">
+                <motion.div key="wa" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="rounded-xl border border-line bg-brand-50/50 p-3">
                   {done >= 4 ? (
-                    <motion.p initial={{ opacity: 0, scale: 0.9, x: 20 }} animate={{ opacity: 1, scale: 1, x: 0 }} className="ml-auto w-fit max-w-[90%] rounded-lg rounded-tr-sm bg-[#D9FDD3] px-3 py-2 text-[12.5px] text-[#111B21]">
-                      Hi Meera, your Suite is confirmed for 12 Nov ✨ <CheckCheck className="inline size-3.5 text-sky-500" />
-                    </motion.p>
+                    <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} className="rounded-lg border border-brand-200 bg-white px-3 py-2 text-[12.5px] text-ink">
+                      <span className="font-semibold text-brand-700">Campaign Dispatched:</span> Booking RSV-1048 confirmed for Meera (Suite 203 · 12 Nov) <CheckCheck className="inline size-3.5 text-emerald-600" />
+                    </motion.div>
                   ) : (
-                    <button data-tour="send" onClick={() => act("send")} className={cn("w-full rounded-lg bg-emerald-600 px-3 py-2 text-[12.5px] font-medium text-white hover:bg-emerald-700", isTarget("send") && "ring-2 ring-gold-400")}>
-                      Send WhatsApp confirmation
+                    <button data-tour="send" onClick={() => act("send")} className={cn("w-full rounded-lg bg-brand-600 px-3 py-2 text-[12.5px] font-medium text-white hover:bg-brand-700", isTarget("send") && "ring-2 ring-gold-400")}>
+                      Dispatch confirmation campaign
                     </button>
                   )}
                 </motion.div>
               )}
             </AnimatePresence>
-            {done === 0 && <p className="pt-16 text-center text-[13px] text-muted">Select a room to begin.</p>}
+            {done === 0 && <p className="pt-16 text-center text-[13px] text-muted-foreground">Select a room to begin.</p>}
           </div>
 
           {/* Housekeeping */}
           <div className="rounded-xl border border-line p-3">
-            <p className="text-[11.5px] font-medium text-muted">Housekeeping</p>
+            <p className="text-[11.5px] font-medium text-muted-foreground">Housekeeping</p>
             <p className="mt-2 text-[13px] font-semibold">Room 203</p>
             <div className="mt-2"><HkBadge status={done >= 5 ? "clean" : "cleaning"} /></div>
             <button data-tour="ready" onClick={() => act("ready")} disabled={done < 4 || done >= 5} className={cn("mt-3 flex w-full items-center justify-center gap-1.5 rounded-lg bg-brand-600 px-3 py-2 text-[12.5px] font-medium text-white hover:bg-brand-700 disabled:opacity-40", isTarget("ready") && "ring-2 ring-gold-400")}>

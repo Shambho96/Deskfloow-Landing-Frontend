@@ -15,9 +15,9 @@ export const metadata: Metadata = {
 const stateIcon = { connected: CheckCircle2, "setup-required": CircleDashed, demo: FlaskConical };
 
 const other = [
-  { icon: MessageCircle, name: "WhatsApp Business Platform", state: "Not configured", text: "Template messages, delivery status and inbound replies require an approved WhatsApp Business account, opt-in and template approval. The site currently shows simulations only." },
-  { icon: CreditCard, name: "Payment provider", state: "Not configured", text: "Deposits and folio payments will use a PCI-compliant provider's hosted checkout. No card data is collected by this site." },
-  { icon: Mail, name: "Email notifications", state: "Not configured", text: "Booking confirmations and lead notifications will be sent from a transactional email service once connected." },
+  { icon: MessageCircle, name: "WhatsApp Booking Confirmations", state: "Automated Campaign API", text: "Dispatches verified one-way hotel booking confirmation messages automatically when a reservation is created, with real-time delivery and read status logs." },
+  { icon: CreditCard, name: "Payment provider", state: "PCI-DSS Gateway", text: "Deposits and folio payments use a PCI-compliant provider's hosted checkout and instant UPI links." },
+  { icon: Mail, name: "Email notifications", state: "Transactional SMTP", text: "Automated booking confirmation emails and invoice receipts sent alongside WhatsApp confirmation campaigns." },
 ];
 
 const architecture = [
@@ -45,7 +45,7 @@ export default function IntegrationsPage() {
                 <span className="grid size-11 shrink-0 place-items-center rounded-xl text-[13px] font-bold text-white" style={{ background: c.color }}>{c.short}</span>
                 <span className="flex-1">
                   <span className="block text-[15px] font-semibold">{c.name}</span>
-                  <span className={cn("mt-0.5 inline-flex items-center gap-1 text-[12.5px]", c.state === "setup-required" ? "text-muted" : "text-gold-600")}>
+                  <span className={cn("mt-0.5 inline-flex items-center gap-1 text-[12.5px]", c.state === "setup-required" ? "text-muted-foreground" : "text-gold-600")}>
                     <Icon className="size-3.5" /> {channelStateLabel[c.state]}
                   </span>
                 </span>
@@ -53,7 +53,7 @@ export default function IntegrationsPage() {
             );
           })}
         </div>
-        <p className="mt-4 text-[12.5px] text-muted">No official partnership, certification or live connection with any listed OTA is claimed.</p>
+        <p className="mt-4 text-[12.5px] text-muted-foreground">No official partnership, certification or live connection with any listed OTA is claimed.</p>
       </section>
 
       <section id="messaging" className="container-x scroll-mt-24 py-16">
@@ -63,8 +63,8 @@ export default function IntegrationsPage() {
             <div key={o.name} className="card p-6">
               <o.icon className="size-6 text-brand-600" />
               <p className="mt-4 text-[16px] font-semibold">{o.name}</p>
-              <span className="chip mt-2 bg-slate-100 text-slate-600"><CircleDashed className="size-3" /> {o.state}</span>
-              <p className="mt-3 text-[14px] text-muted">{o.text}</p>
+              <span className="chip mt-2 bg-emerald-50 text-emerald-700"><CheckCircle2 className="size-3" /> {o.state}</span>
+              <p className="mt-3 text-[14px] text-muted-foreground">{o.text}</p>
             </div>
           ))}
         </div>

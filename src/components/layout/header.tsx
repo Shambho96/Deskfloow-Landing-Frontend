@@ -7,10 +7,10 @@ import { AnimatePresence, motion } from "motion/react";
 import { ChevronDown, Menu, X, ArrowRight, PlayCircle } from "lucide-react";
 import { Logo } from "@/components/ui/logo";
 import { ButtonLink } from "@/components/ui/button";
-import { mainNav, platformNav, resourcesNav } from "@/data/nav";
+import { mainNav, platformNav } from "@/data/nav";
 import { cn } from "@/lib/utils";
 
-type MenuKey = "features" | "resources" | null;
+type MenuKey = "features" | null;
 
 export function Header() {
   const pathname = usePathname();
@@ -58,13 +58,19 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 transition-all duration-300",
-        scrolled || menu
-          ? "border-b border-border bg-card/85 backdrop-blur-xl shadow-xs"
-          : "border-b border-transparent bg-transparent",
+        "sticky top-0 z-50 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
+        scrolled ? "px-3 pt-3 sm:px-6" : "px-0 pt-0",
       )}
     >
-      <div ref={navRef} className="container-x flex h-[70px] items-center justify-between gap-6">
+      <div
+        ref={navRef}
+        className={cn(
+          "mx-auto flex w-full items-center justify-between gap-6 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
+          scrolled
+            ? "h-[60px] max-w-[1240px] rounded-[36px] border border-white/60 bg-white/50 px-6 shadow-[0_14px_40px_-10px_rgb(0_0_0/0.14)] ring-1 ring-black/5 backdrop-blur-3xl backdrop-saturate-150"
+            : "h-[72px] max-w-[1440px] rounded-[0px] border border-transparent bg-transparent px-5 sm:px-8",
+        )}
+      >
         <Link href="/" aria-label="DeskFloow home" className="shrink-0 transition-opacity hover:opacity-90">
           <Logo height={35} priority />
         </Link>
@@ -97,41 +103,6 @@ export function Header() {
               {l.label}
             </Link>
           ))}
-
-          <div {...hover("resources")} className="relative">
-            <button
-              aria-expanded={menu === "resources"}
-              onClick={() => setMenu(menu === "resources" ? null : "resources")}
-              className={cn(
-                "flex items-center gap-1.5 rounded-full px-4 py-2 text-[14px] font-medium text-foreground/80 transition hover:bg-muted hover:text-foreground",
-                menu === "resources" && "bg-muted text-foreground",
-              )}
-            >
-              Resources <ChevronDown className={cn("size-3.5 transition-transform duration-200", menu === "resources" && "rotate-180")} />
-            </button>
-
-            <AnimatePresence>
-              {menu === "resources" && (
-                <motion.div
-                  initial={{ opacity: 0, y: 6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 6 }}
-                  transition={{ duration: 0.16 }}
-                  className="card absolute top-full left-0 mt-2 w-60 p-2 shadow-xl border border-border bg-card text-card-foreground"
-                >
-                  {resourcesNav.map((r) => (
-                    <Link
-                      key={r.href}
-                      href={r.href}
-                      className="block rounded-xl px-3 py-2 text-[14px] text-foreground/80 transition hover:bg-muted hover:text-foreground"
-                    >
-                      {r.label}
-                    </Link>
-                  ))}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
         </nav>
 
         {/* Right Action Cluster: Log In + CTA */}
@@ -178,6 +149,7 @@ export function Header() {
                       <Link
                         key={n.label}
                         href={n.href}
+                        onClick={() => setMenu(null)}
                         className="group flex gap-3.5 rounded-xl p-3 transition hover:bg-muted"
                       >
                         <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-primary-foreground">
@@ -249,6 +221,7 @@ export function Header() {
                       <Link
                         key={n.label}
                         href={n.href}
+                        onClick={() => setMobile(false)}
                         className="flex items-center gap-3 rounded-xl px-2.5 py-2.5 text-[15px] font-medium text-foreground hover:bg-muted"
                       >
                         <n.icon className="size-4 text-primary" /> {n.label}
@@ -257,12 +230,13 @@ export function Header() {
                   </div>
                 </div>
                 <div>
-                  <p className="mb-2 text-[11px] font-bold tracking-widest text-muted-foreground uppercase">Company &amp; Resources</p>
+                  <p className="mb-2 text-[11px] font-bold tracking-widest text-muted-foreground uppercase">Navigation</p>
                   <div className="grid gap-1">
-                    {[...mainNav, ...resourcesNav].map((l) => (
+                    {mainNav.map((l) => (
                       <Link
                         key={l.href + l.label}
                         href={l.href}
+                        onClick={() => setMobile(false)}
                         className="block rounded-xl px-2.5 py-2 text-[15px] font-medium text-foreground hover:bg-muted"
                       >
                         {l.label}

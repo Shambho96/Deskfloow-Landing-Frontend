@@ -97,17 +97,17 @@
   /* Convenience aliases for DeskFloow UI tokens */
   --color-ink: var(--foreground);
   --color-line: var(--border);
-  --color-brand-50: color-mix(in oklch, var(--primary) 6%, var(--background));
-  --color-brand-100: color-mix(in oklch, var(--primary) 12%, var(--background));
-  --color-brand-200: color-mix(in oklch, var(--primary) 24%, var(--background));
-  --color-brand-300: color-mix(in oklch, var(--primary) 40%, var(--background));
-  --color-brand-400: color-mix(in oklch, var(--primary) 70%, var(--background));
-  --color-brand-500: var(--primary);
-  --color-brand-600: var(--primary);
-  --color-brand-700: color-mix(in oklch, var(--primary) 85%, black);
-  --color-brand-800: color-mix(in oklch, var(--primary) 70%, black);
-  --color-brand-900: color-mix(in oklch, var(--primary) 50%, black);
-  --color-brand-950: color-mix(in oklch, var(--primary) 25%, black);
+  --color-brand-50: #f6f2ff;
+  --color-brand-100: #ede5ff;
+  --color-brand-200: #dcceff;
+  --color-brand-300: #c3a8ff;
+  --color-brand-400: #a375ff;
+  --color-brand-500: #874bff;
+  --color-brand-600: #7332f6;
+  --color-brand-700: #5f22d9;
+  --color-brand-800: #4c1cb0;
+  --color-brand-900: #35137d;
+  --color-brand-950: #1d0947;
 
   --color-gold-100: #fef3c7;
   --color-gold-200: #fde68a;
@@ -152,6 +152,10 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: clip;
+  }
   * {
     @apply border-border outline-ring/50;
     box-sizing: border-box;
@@ -162,7 +166,7 @@
     letter-spacing: var(--tracking-normal);
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 }
 
@@ -252,5 +256,53 @@ img {
 @layer utilities {
   .text-muted {
     color: var(--muted-foreground);
+  }
+  .animate-marquee {
+    animation: marquee 32s linear infinite;
+  }
+  .animate-pulse-soft {
+    animation: pulse-soft 2.4s ease-in-out infinite;
+  }
+}
+
+@keyframes wr {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes tilt {
+  from {
+    opacity: 0;
+    transform: translateY(20px) rotateX(6deg) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg) scale(1);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(0.92);
   }
 }

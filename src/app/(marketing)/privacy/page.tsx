@@ -63,8 +63,8 @@ export default function PrivacyPage() {
         <h2>4. Purpose of Data Processing</h2>
         <p>
           Information collected is processed strictly to: (a) coordinate real-time room readiness between reception and
-          housekeeping; (b) compute turnaround metrics and operational bottlenecks; (c) verify user authorization and
-          enforce role-based access; and (d) fulfill statutory billing and security obligations under applicable law.
+          housekeeping; (b) compute turnaround metrics and operational bottlenecks; (c) verify user authorization; and
+          (d) fulfill statutory billing and security obligations under applicable law.
         </p>
 
         <h2>5. Sub-Processors &amp; Data Disclosures</h2>
@@ -83,10 +83,6 @@ export default function PrivacyPage() {
           <li>
             <strong>Cryptographic Controls:</strong> Transport Layer Security (TLS 1.3) encryption for data in transit;
             AES-256 bit encryption for persistent data at rest.
-          </li>
-          <li>
-            <strong>Role-Based Access Control (RBAC):</strong> Granular permissions ensuring front-desk clerks, room
-            attendants, and managers access only necessary functional data.
           </li>
           <li>
             <strong>Session Auditing:</strong> Anomaly detection, multi-factor administrative protections, and complete

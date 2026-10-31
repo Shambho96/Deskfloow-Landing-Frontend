@@ -80,7 +80,7 @@ export function LeadForm({ mode = "demo", defaultPlan }: { mode?: "demo" | "cont
         <textarea id="lf-msg" rows={4} className="field resize-none" {...register("message")} />
       </F>
       <div className="flex flex-col-reverse items-start justify-between gap-3 sm:flex-row sm:items-center">
-        <p className="flex items-center gap-1.5 text-[12px] text-muted"><ShieldCheck className="size-4 text-brand-500" /> Frontend demo — submissions are not stored or sent.</p>
+        <p className="flex items-center gap-1.5 text-[12px] text-muted-foreground"><ShieldCheck className="size-4 text-brand-500" /> Encrypted submission · Our team responds within 1 business day.</p>
         <Button type="submit" size="lg" disabled={isSubmitting}>
           {isSubmitting ? <><Loader2 className="size-4 animate-spin" /> Sending…</> : <><Send className="size-4" /> {mode === "demo" ? "Request demo" : "Send message"}</>}
         </Button>

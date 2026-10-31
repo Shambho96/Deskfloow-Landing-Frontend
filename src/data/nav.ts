@@ -15,7 +15,7 @@ export const platformNav: NavItem[] = [
   { label: "Visual Tape Chart", href: "/features#tape-chart", description: "Interactive 7-day room inventory matrix", icon: CalendarRange },
   { label: "OTA Channel Manager", href: "/features#channels", description: "2-way instant sync across every channel", icon: Network },
   { label: "Direct Booking Engine", href: "/features#booking", description: "Commission-free bookings on your domain", icon: Globe2 },
-  { label: "WhatsApp Guest Journey", href: "/features#whatsapp", description: "Automated confirmations, check-in & concierge", icon: MessageCircle },
+  { label: "WhatsApp Confirmations", href: "/features#whatsapp", description: "Automated booking confirmation campaign service", icon: MessageCircle },
   { label: "Guest CRM & Loyalty", href: "/features#crm", description: "VIP tags, guest history and repeat stay profiles", icon: UsersRound },
   { label: "Smart Housekeeping", href: "/features#housekeeping", description: "Live room readiness and visual floor plans", icon: Sparkles },
   { label: "Restaurant & POS Orders", href: "/features#orders", description: "Contactless QR menu & room service billing", icon: UtensilsCrossed },
@@ -26,11 +26,4 @@ export const mainNav = [
   { label: "Solutions", href: "/solutions" },
   { label: "Integrations", href: "/integrations" },
   { label: "Pricing", href: "/pricing" },
-];
-
-export const resourcesNav = [
-  { label: "Book a Guided Demo", href: "/book-demo" },
-  { label: "Contact Sales Team", href: "/contact" },
-  { label: "Platform Pricing Plans", href: "/pricing" },
-  { label: "Hotel Solution Guides", href: "/solutions" },
 ];

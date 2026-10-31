@@ -133,12 +133,15 @@ export function HeroDashboard() {
                     ))}
                   </ul>
                 </motion.div>
-                <motion.div variants={item} className="rounded-xl border border-emerald-200 bg-emerald-50/60 p-3">
-                  <div className="flex items-center gap-2 text-[11.5px] font-semibold text-emerald-800">
-                    <MessageCircle className="size-3.5" /> WhatsApp · Meera Joshi
+                <motion.div variants={item} className="rounded-xl border border-line bg-brand-50/50 p-3">
+                  <div className="flex items-center justify-between text-[11.5px] font-semibold text-brand-800">
+                    <span className="flex items-center gap-1.5">
+                      <MessageCircle className="size-3.5 text-brand-600" /> Confirmation Campaign
+                    </span>
+                    <span className="font-mono text-[10.5px] text-emerald-700">200 OK</span>
                   </div>
-                  <p className="mt-1.5 rounded-lg rounded-tl-none bg-white px-2.5 py-1.5 text-[11.5px] text-ink shadow-sm">
-                    Could we have the cake delivered at 8 PM?
+                  <p className="mt-1.5 rounded-lg border border-line bg-white px-2.5 py-1.5 text-[11.5px] text-ink">
+                    RSV-1048 · Meera Joshi · Suite 203 · Dispatched
                   </p>
                 </motion.div>
                 <motion.div variants={item} className="flex items-center justify-between rounded-xl border border-line bg-white p-3 text-[11.5px]">

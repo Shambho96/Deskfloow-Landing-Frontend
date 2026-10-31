@@ -34,7 +34,7 @@ const searchEntries: SearchEntry[] = [
   { id: "s-independent", category: "Solution", title: "Independent & Boutique Hotels", meta: "Streamline operations without expensive enterprise bloat", href: "/solutions#independent", Icon: Building2 },
   { id: "s-resorts", category: "Solution", title: "Luxury Resorts & Destination Spas", meta: "Guest concierge, multiple outlets and personalized VIP stays", href: "/solutions#resorts", Icon: Sparkles },
   { id: "s-homestays", category: "Solution", title: "Homestays, Villas & Serviced Apartments", meta: "Contactless check-in, WhatsApp messaging and automated ops", href: "/solutions#homestays", Icon: Globe2 },
-  { id: "s-chains", category: "Solution", title: "Hotel Groups & Regional Chains", meta: "Centralized multi-property reporting, roles and inventory control", href: "/solutions#chains", Icon: Network },
+  { id: "s-chains", category: "Solution", title: "Hotel Groups & Regional Chains", meta: "Centralized multi-property reporting and inventory control", href: "/solutions#chains", Icon: Network },
 
   // Integrations
   { id: "i-booking", category: "Integration", title: "Booking.com Connection", meta: "Real-time 2-way rate and inventory distribution", href: "/integrations#ota", Icon: Network },
@@ -142,8 +142,8 @@ export function CommandPalette() {
         <div className="max-h-[60vh] overflow-y-auto p-2 scrollbar-thin">
           {results.length === 0 ? (
             <div className="p-8 text-center">
-              <p className="text-[14px] font-medium text-muted">No results found for &ldquo;{query}&rdquo;</p>
-              <p className="mt-1 text-[13px] text-muted/70">Try searching for Tape Chart, WhatsApp, Pricing, or Solutions</p>
+              <p className="text-[14px] font-medium text-muted-foreground">No results found for &ldquo;{query}&rdquo;</p>
+              <p className="mt-1 text-[13px] text-muted-foreground/70">Try searching for Tape Chart, WhatsApp, Pricing, or Solutions</p>
             </div>
           ) : (
             <ul className="space-y-1">
@@ -186,7 +186,7 @@ export function CommandPalette() {
                             {r.category}
                           </span>
                         </div>
-                        <p className={cn("text-[12px] truncate", isSelected ? "text-white/80" : "text-muted")}>
+                        <p className={cn("text-[12px] truncate", isSelected ? "text-white/80" : "text-muted-foreground")}>
                           {r.meta}
                         </p>
                       </div>
@@ -199,7 +199,7 @@ export function CommandPalette() {
           )}
         </div>
 
-        <div className="flex items-center justify-between border-t border-line bg-brand-50/50 px-4 py-2.5 text-[11.5px] text-muted">
+        <div className="flex items-center justify-between border-t border-line bg-brand-50/50 px-4 py-2.5 text-[11.5px] text-muted-foreground">
           <span>Navigate with <kbd className="rounded border px-1">↑</kbd> <kbd className="rounded border px-1">↓</kbd></span>
           <span className="flex items-center gap-1">Select <CornerDownLeft className="size-3" /></span>
         </div>

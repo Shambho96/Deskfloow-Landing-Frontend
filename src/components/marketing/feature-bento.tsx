@@ -31,7 +31,7 @@ function Card({ className, icon: Icon, title, text, children }: { className?: st
         </span>
         <h3 className="text-[17px] font-semibold tracking-tight text-ink">{title}</h3>
       </div>
-      <p className="mt-2 text-[14px] leading-relaxed text-muted">{text}</p>
+      <p className="mt-2 text-[14px] leading-relaxed text-muted-foreground">{text}</p>
       {children && <div className="mt-5 flex-1">{children}</div>}
     </motion.article>
   );
@@ -53,7 +53,7 @@ function FrontDeskMini() {
           <li key={r.id} className="flex items-center justify-between rounded-xl border border-line bg-brand-50/40 px-3 py-2.5">
             <span>
               <span className="block text-[13.5px] font-medium text-ink">{r.name}</span>
-              <span className="block text-[12px] text-muted">Room {r.room}</span>
+              <span className="block text-[12px] text-muted-foreground">Room {r.room}</span>
             </span>
             <button
               onClick={() => setDone((d) => (ok ? d.filter((x) => x !== r.id) : [...d, r.id]))}
@@ -84,7 +84,7 @@ function TapeMini() {
   ];
   return (
     <div>
-      <div className="mb-2 flex items-center justify-between text-[12px] text-muted">
+      <div className="mb-2 flex items-center justify-between text-[12px] text-muted-foreground">
         <span>{offset === 0 ? "This week" : `+${offset} days`}</span>
         <span className="flex gap-1">
           <button aria-label="Previous days" onClick={() => setOffset((o) => Math.max(0, o - 1))} className="rounded-md border border-line p-1 hover:bg-brand-50"><ChevronLeft className="size-3.5" /></button>
@@ -142,28 +142,39 @@ function OtaMini() {
   );
 }
 
-/** Interactive mini: WhatsApp template preview. */
+/** Interactive mini: WhatsApp booking confirmation campaign preview. */
 function WhatsMini() {
-  const t = {
-    Confirm: "Hi Meera, your Suite at Grand Palace is confirmed for 12 Nov ✨",
-    Arrival: "Hello Meera! Let us know your arrival time — we'll have Room 203 ready.",
-    Checkout: "Thank you for staying with us, Meera 💜 Safe travels!",
-  } as const;
-  const [k, setK] = useState<keyof typeof t>("Confirm");
+  const [sent, setSent] = useState(true);
   return (
-    <div>
-      <div className="flex gap-1.5" role="tablist" aria-label="Message template">
-        {(Object.keys(t) as (keyof typeof t)[]).map((x) => (
-          <button key={x} role="tab" aria-selected={k === x} onClick={() => setK(x)} className={cn("rounded-full px-3 py-1 text-[12px] font-medium transition", k === x ? "bg-emerald-600 text-white" : "bg-emerald-50 text-emerald-800 hover:bg-emerald-100")}>
-            {x}
-          </button>
-        ))}
+    <div className="space-y-2.5">
+      <div className="flex items-center justify-between text-[11.5px]">
+        <span className="chip bg-brand-100 text-brand-800 font-semibold">Template: BOOKING_CONFIRM</span>
+        <span className="font-semibold text-emerald-700">{sent ? "Dispatched · 200 OK" : "Dispatching…"}</span>
       </div>
-      <div className="mt-3 rounded-xl bg-[#ECE5DD] p-3">
-        <motion.p key={k} initial={{ opacity: 0, y: 8, scale: 0.96 }} animate={{ opacity: 1, y: 0, scale: 1 }} className="ml-auto w-fit max-w-[90%] rounded-lg rounded-tr-none bg-[#DCF8C6] px-3 py-2 text-[12.5px] text-ink shadow-sm">
-          {t[k]} <span className="ml-1 text-[10px] text-sky-600">✓✓</span>
-        </motion.p>
-      </div>
+      <motion.div
+        key={String(sent)}
+        initial={{ opacity: 0, y: 6 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="rounded-xl border border-line bg-brand-50/40 p-3 text-[12px]"
+      >
+        <div className="flex items-center justify-between font-semibold text-ink">
+          <span>Meera Joshi · Suite 203</span>
+          <span className="font-mono text-[11px] text-brand-700">RSV-1048</span>
+        </div>
+        <p className="mt-1 text-[11.5px] text-muted-foreground">
+          Check-in 12 Nov · Auto-triggered via confirmation campaign API
+        </p>
+      </motion.div>
+      <button
+        type="button"
+        onClick={() => {
+          setSent(false);
+          setTimeout(() => setSent(true), 600);
+        }}
+        className="w-full rounded-lg bg-brand-600 px-3 py-1.5 text-[12px] font-medium text-white transition hover:bg-brand-700"
+      >
+        Simulate Campaign Dispatch
+      </button>
     </div>
   );
 }
@@ -196,7 +207,7 @@ function BookingMini() {
   return (
     <div className="rounded-xl border border-line p-3">
       <div className="flex items-center justify-between text-[13px]">
-        <span className="text-muted">Premium room · {inr(rate)}/night</span>
+        <span className="text-muted-foreground">Premium room · {inr(rate)}/night</span>
       </div>
       <div className="mt-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
@@ -224,8 +235,7 @@ export function FeatureBento() {
         <motion.div
           variants={grid}
           initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-100px" }}
+          animate="show"
           className="mt-14 grid gap-4 md:grid-cols-6"
         >
           <Card className="md:col-span-3 md:row-span-2" icon={BedDouble} title="Front Desk & PMS" text="Arrivals, departures, room assignments, folios and shift handovers on one screen. Try checking in a guest.">
@@ -247,7 +257,7 @@ export function FeatureBento() {
             <p className="relative mt-2 mb-5 text-[14px] text-white/70">Keep availability aligned across your direct site and connected channels from one inventory.</p>
             <div className="relative"><OtaMini /></div>
           </motion.article>
-          <Card className="md:col-span-2" icon={MessageCircle} title="WhatsApp Guest Messaging" text="Approved templates, attached to the stay.">
+          <Card className="md:col-span-2" icon={MessageCircle} title="WhatsApp Booking Confirmations" text="Automated one-way booking confirmation campaign dispatch on every reservation.">
             <WhatsMini />
           </Card>
           <Card className="md:col-span-2" icon={Sparkles} title="Housekeeping" text="Tap a room to move it through the cleaning flow.">
@@ -258,7 +268,7 @@ export function FeatureBento() {
               <span className="grid size-10 place-items-center rounded-full bg-gradient-to-br from-brand-500 to-brand-700 text-[13px] font-semibold text-white">AI</span>
               <div className="flex-1">
                 <p className="text-[13.5px] font-medium text-ink">Ananya Iyer</p>
-                <p className="text-[12px] text-muted">9 stays · Gluten-free · Lake view</p>
+                <p className="text-[12px] text-muted-foreground">9 stays · Gluten-free · Lake view</p>
               </div>
               <span className="chip bg-gold-100 text-gold-600"><Crown className="size-3" /> Platinum</span>
             </div>
@@ -275,7 +285,7 @@ export function FeatureBento() {
                 </linearGradient>
               </defs>
               <path d="M0 52 L50 44 L100 48 L150 34 L200 26 L250 10 L300 30 L300 70 L0 70Z" fill="url(#spark)" />
-              <motion.path d="M0 52 L50 44 L100 48 L150 34 L200 26 L250 10 L300 30" fill="none" stroke="#7340eb" strokeWidth="2.5" initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} viewport={{ once: true }} transition={{ duration: 1.4, ease: "easeOut" }} />
+              <motion.path d="M0 52 L50 44 L100 48 L150 34 L200 26 L250 10 L300 30" fill="none" stroke="#7340eb" strokeWidth="2.5" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1.4, ease: "easeOut" }} />
               <circle cx="250" cy="10" r="4.5" fill="#FFC95C" stroke="white" strokeWidth="2" />
             </svg>
           </Card>

@@ -27,23 +27,23 @@ export function Comparison() {
       <div className="container-x">
         <SectionHeading align="center" eyebrow="Why unified matters" title="Fewer tools. Fewer handoffs. One source of truth." lead="A neutral look at the difference between running a hotel on disconnected tools and running it from one connected workspace." />
         <div className="mt-14 grid gap-5 md:grid-cols-2">
-          <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.6 }} className="rounded-3xl border border-line bg-white p-7">
+          <motion.div initial={{ opacity: 0, x: -24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} className="rounded-3xl border border-line bg-white p-7">
             <p className="text-[13px] font-semibold tracking-wide text-muted-foreground uppercase">Traditional fragmented workflow</p>
             <ul className="mt-6 space-y-3.5">
               {fragmented.map((t, i) => (
-                <motion.li key={t} initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 + i * 0.07 }} className="flex items-center gap-3 text-[15px] text-ink/70">
+                <motion.li key={t} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 + i * 0.07 }} className="flex items-center gap-3 text-[15px] text-ink/70">
                   <span className="grid size-6 shrink-0 place-items-center rounded-full bg-rose-50 text-danger"><X className="size-3.5" strokeWidth={3} aria-label="No" /></span>
                   {t}
                 </motion.li>
               ))}
             </ul>
           </motion.div>
-          <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.6 }} className="relative overflow-hidden rounded-3xl bg-brand-900 p-7 text-white shadow-lift">
+          <motion.div initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} className="relative overflow-hidden rounded-3xl bg-brand-900 p-7 text-white shadow-lift">
             <div className="pointer-events-none absolute -top-20 -right-20 size-64 rounded-full bg-brand-500/40 blur-3xl" />
             <div className="relative flex items-center gap-3"><Logo tone="light" height={26} /><span className="text-[13px] font-semibold tracking-wide text-white/60 uppercase">workflow</span></div>
             <ul className="relative mt-6 space-y-3.5">
               {unified.map((t, i) => (
-                <motion.li key={t} initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.25 + i * 0.07 }} className="flex items-center gap-3 text-[15px]">
+                <motion.li key={t} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25 + i * 0.07 }} className="flex items-center gap-3 text-[15px]">
                   <span className="grid size-6 shrink-0 place-items-center rounded-full bg-emerald-400/20 text-emerald-300"><Check className="size-3.5" strokeWidth={3} aria-label="Yes" /></span>
                   {t}
                 </motion.li>

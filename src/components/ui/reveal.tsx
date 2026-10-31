@@ -4,7 +4,7 @@ import { motion, useReducedMotion, type HTMLMotionProps } from "motion/react";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-/** Fade-up on enter viewport. Content is visible without JS (SSR renders final state when reduced). */
+/** Smooth entrance animation. Never stays hidden on load. */
 export function Reveal({
   children,
   delay = 0,
@@ -16,9 +16,8 @@ export function Reveal({
   return (
     <motion.div
       initial={reduce ? false : { opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] }}
       className={className}
       {...props}
     >

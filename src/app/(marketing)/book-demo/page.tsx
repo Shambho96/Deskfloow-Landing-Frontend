@@ -45,7 +45,7 @@ export default function BookDemoPage() {
                 <Sparkles className="size-4 text-gold-500" />
                 <p className="text-[13px] font-bold">1-on-1 Hospitality Consultation</p>
               </div>
-              <p className="mt-1 text-[12.5px] text-muted">
+              <p className="mt-1 text-[12.5px] text-muted-foreground">
                 Prefer immediate answers? Our team is available for quick phone or WhatsApp consultations.
               </p>
               <ButtonLink href="/contact" size="sm" variant="secondary" className="mt-3">
@@ -57,7 +57,7 @@ export default function BookDemoPage() {
           <h2 className="mt-8 text-[20px] font-bold text-ink">What you will experience</h2>
           <ul className="mt-4 space-y-3">
             {expect.map((e) => (
-              <li key={e} className="flex gap-3 text-[14.5px] text-muted">
+              <li key={e} className="flex gap-3 text-[14.5px] text-muted-foreground">
                 <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-success/15 text-success">
                   <Check className="size-3.5" aria-hidden />
                 </span>
@@ -66,7 +66,7 @@ export default function BookDemoPage() {
             ))}
           </ul>
 
-          <div className="mt-8 rounded-2xl border border-line bg-brand-50/60 p-4 text-[13px] text-muted">
+          <div className="mt-8 rounded-2xl border border-line bg-brand-50/60 p-4 text-[13px] text-muted-foreground">
             <p className="flex items-center gap-2 font-medium text-ink">
               <ShieldCheck className="size-4 text-brand-600" /> No commitment required
             </p>

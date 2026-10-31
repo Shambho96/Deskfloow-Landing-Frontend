@@ -10,7 +10,7 @@ export default function NotFound() {
         <Link href="/" className="mx-auto block w-fit"><Logo /></Link>
         <p className="mt-10 bg-gradient-to-b from-brand-500 to-brand-800 bg-clip-text text-[96px] leading-none font-semibold tracking-tighter text-transparent">404</p>
         <h1 className="mt-3 text-[24px] font-semibold">This room isn&apos;t on the floor plan.</h1>
-        <p className="mx-auto mt-2 max-w-sm text-muted">The page you&apos;re looking for doesn&apos;t exist or has moved.</p>
+        <p className="mx-auto mt-2 max-w-sm text-muted-foreground">The page you&apos;re looking for doesn&apos;t exist or has moved.</p>
         <div className="mt-6 flex justify-center gap-3">
           <ButtonLink href="/">Back to home</ButtonLink>
           <ButtonLink href="/book-demo" variant="secondary">Book a Demo</ButtonLink>

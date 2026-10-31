@@ -26,14 +26,14 @@ export default function LoginPage() {
             <KeyRound className="size-6" aria-hidden />
           </span>
           <h1 className="mt-5 text-[26px] font-bold tracking-tight text-ink">Staff Portal Login</h1>
-          <p className="mt-1.5 text-[14.5px] leading-relaxed text-muted">
+          <p className="mt-1.5 text-[14.5px] leading-relaxed text-muted-foreground">
             Enter your property credentials to access your front desk, tape chart, and housekeeping console.
           </p>
 
           <LoginForm />
         </div>
 
-        <p className="mt-6 text-center text-[12px] text-muted flex items-center justify-center gap-1.5">
+        <p className="mt-6 text-center text-[12px] text-muted-foreground flex items-center justify-center gap-1.5">
           <ShieldCheck className="size-3.5 text-emerald-500" />
           Encrypted 256-bit TLS connection · Multi-factor authentication protected
         </p>

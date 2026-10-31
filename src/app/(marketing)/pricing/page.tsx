@@ -40,9 +40,9 @@ export default function PricingPage() {
             <details key={q} className="group px-6 py-5">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[16px] font-medium">
                 {q}
-                <ChevronDown className="size-4 shrink-0 text-muted transition group-open:rotate-180" />
+                <ChevronDown className="size-4 shrink-0 text-muted-foreground transition group-open:rotate-180" />
               </summary>
-              <p className="mt-3 text-[14.5px] leading-relaxed text-muted">{a}</p>
+              <p className="mt-3 text-[14.5px] leading-relaxed text-muted-foreground">{a}</p>
             </details>
           ))}
         </div>

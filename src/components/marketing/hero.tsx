@@ -46,7 +46,7 @@ export function Hero() {
 
           <p className="mx-auto mt-6 max-w-2xl text-[18px] leading-relaxed text-muted-foreground sm:text-[20px] [animation:wr_0.8s_0.75s_cubic-bezier(0.22,1,0.36,1)_both]">
             One intelligent cloud platform for every room, reservation, guest, and operation. Connect your front desk,
-            interactive tape chart, 2-way OTA channels, WhatsApp guest journeys, and revenue in one unified workspace.
+            interactive tape chart, 2-way OTA channels, automated WhatsApp booking confirmations, and revenue in one unified workspace.
           </p>
 
           <div className="mt-9 flex flex-col items-center justify-center gap-3.5 sm:flex-row [animation:wr_0.8s_0.9s_cubic-bezier(0.22,1,0.36,1)_both]">
@@ -63,7 +63,7 @@ export function Hero() {
               <Check className="size-4 text-success" /> 2-Way Instant OTA Sync
             </span>
             <span className="flex items-center gap-1.5">
-              <Check className="size-4 text-success" /> Automated WhatsApp Concierge
+              <Check className="size-4 text-success" /> Automated WhatsApp Confirmations
             </span>
             <span className="flex items-center gap-1.5">
               <Check className="size-4 text-success" /> Multi-Property Ready
@@ -153,10 +153,10 @@ export function Hero() {
                     <div className="flex-1 rounded-2xl border border-white/20 bg-brand-950/80 p-4 text-white backdrop-blur-md">
                       <div className="flex items-center gap-2 text-emerald-400">
                         <MessageCircle className="size-4" />
-                        <span className="text-[12px] font-bold uppercase tracking-wider">WhatsApp Concierge</span>
+                        <span className="text-[12px] font-bold uppercase tracking-wider">WhatsApp Confirmations</span>
                       </div>
                       <p className="mt-1 text-[13.5px] font-medium text-white/90">
-                        Automated check-in links, digital keycodes, and live guest requests directly on WhatsApp.
+                        Automated hotel booking confirmation campaigns dispatched instantly when a reservation is created.
                       </p>
                     </div>
 

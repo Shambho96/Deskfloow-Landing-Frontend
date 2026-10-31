@@ -3,25 +3,12 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 import { useState } from "react";
-import { Check, Lock } from "lucide-react";
+import { Check } from "lucide-react";
 import { CountUp } from "@/components/animations/count-up";
 import { demoProperties } from "@/data/demo-properties";
 import { propertySnapshot } from "@/lib/metrics";
 import { cn, inr } from "@/lib/utils";
-import type { PropertyId, StaffRole } from "@/types";
-
-const ROLES: StaffRole[] = ["Owner", "Manager", "Front Desk", "Housekeeping"];
-
-export const permissions: { feature: string; roles: StaffRole[]; sensitive?: boolean }[] = [
-  { feature: "View reservations & tape chart", roles: ["Owner", "Manager", "Front Desk"] },
-  { feature: "Automated check-in & keycard release", roles: ["Owner", "Manager", "Front Desk"] },
-  { feature: "Update room status & housekeeping", roles: ["Owner", "Manager", "Front Desk", "Housekeeping"] },
-  { feature: "Send guest WhatsApp messages", roles: ["Owner", "Manager", "Front Desk"] },
-  { feature: "Manager check-in override", roles: ["Owner", "Manager"], sensitive: true },
-  { feature: "Financial revenue reports & exports", roles: ["Owner", "Manager"], sensitive: true },
-  { feature: "Shift cash register & drawer audit", roles: ["Owner", "Manager", "Front Desk"], sensitive: true },
-  { feature: "OTA rates, channels & inventory settings", roles: ["Owner"], sensitive: true },
-];
+import type { PropertyId } from "@/types";
 
 export function PropertySwitcher() {
   const [activeProperty, setActiveProperty] = useState<PropertyId>("grand-palace");
@@ -72,6 +59,7 @@ export function PropertySwitcher() {
         key={activeProperty}
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
         className="card grid grid-cols-2 gap-3 p-4"
       >
         <Metric label="Occupancy" value={snap.occupancy} fmt={(n) => `${Math.round(n)}%`} />
@@ -94,67 +82,6 @@ function Metric({ label, value, fmt }: { label: string; value: number; fmt?: (n:
     <div className="rounded-xl border border-border/70 bg-card/60 p-3">
       <p className="text-[11.5px] text-muted-foreground">{label}</p>
       <CountUp value={value} format={fmt} className="mt-1 block text-[22px] font-bold tracking-tight text-foreground" />
-    </div>
-  );
-}
-
-export function RolePermissions() {
-  const [role, setRole] = useState<StaffRole>("Owner");
-
-  return (
-    <div className="card overflow-hidden">
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border bg-card/60 p-4">
-        <p className="text-[13.5px] font-bold text-foreground">Role-Based Access Control</p>
-        <div className="flex flex-wrap gap-1 rounded-full bg-muted p-1" role="radiogroup" aria-label="Staff role">
-          {ROLES.map((r) => (
-            <button
-              key={r}
-              type="button"
-              role="radio"
-              aria-checked={role === r}
-              onClick={() => setRole(r)}
-              className={cn(
-                "rounded-full px-3 py-1.5 text-[12.5px] font-medium transition",
-                role === r
-                  ? "bg-primary text-primary-foreground shadow-sm"
-                  : "text-muted-foreground hover:text-foreground",
-              )}
-            >
-              {r}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <ul className="divide-y divide-border/60">
-        {permissions.map((p) => {
-          const ok = p.roles.includes(role);
-          return (
-            <li key={p.feature} className="flex items-center justify-between gap-3 px-4 py-2.5 text-[13px]">
-              <span className="flex items-center gap-2 text-foreground">
-                {ok ? (
-                  <span className="grid size-5 place-items-center rounded-full bg-emerald-500/10 text-emerald-500">
-                    <Check className="size-3" />
-                  </span>
-                ) : (
-                  <span className="grid size-5 place-items-center rounded-full bg-muted text-muted-foreground">
-                    <Lock className="size-3" />
-                  </span>
-                )}
-                {p.feature}
-              </span>
-              <span className="flex items-center gap-2">
-                {p.sensitive && (
-                  <span className="chip bg-amber-500/10 text-amber-500 font-medium">Restricted</span>
-                )}
-                <span className={cn("text-[12px] font-semibold", ok ? "text-emerald-500" : "text-muted-foreground")}>
-                  {ok ? "Granted" : "Blocked"}
-                </span>
-              </span>
-            </li>
-          );
-        })}
-      </ul>
     </div>
   );
 }

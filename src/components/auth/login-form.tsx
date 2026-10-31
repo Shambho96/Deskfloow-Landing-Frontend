@@ -60,7 +60,7 @@ export function LoginForm() {
       </Button>
 
       <div className="mt-6 pt-5 border-t border-line text-center">
-        <p className="text-[13px] text-muted">
+        <p className="text-[13px] text-muted-foreground">
           Not a DeskFloow customer yet?{" "}
           <Link href="/book-demo" className="font-semibold text-brand-600 hover:underline">
             Book a guided demo

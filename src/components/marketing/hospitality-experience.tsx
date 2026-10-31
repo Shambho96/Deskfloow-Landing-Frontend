@@ -33,21 +33,21 @@ const experiences = [
   },
   {
     id: "concierge",
-    tag: "Contactless WhatsApp Concierge",
-    title: "Turn WhatsApp into your highest-converting guest concierge.",
+    tag: "WhatsApp Booking Confirmations",
+    title: "Automated hotel booking confirmation campaigns on WhatsApp.",
     description:
-      "Guests don't want to download another app. DeskFloow connects directly to WhatsApp Business API to deliver automated booking confirmations, pre-arrival registration forms, digital keys, and room service menus straight to their chat.",
+      "Works just like an automated email campaign service for your hotel. The moment a reservation is created or synced, DeskFloow dispatches a verified one-way WhatsApp booking confirmation message with the booking ID, room details, and stay dates.",
     image: "/images/guest-mobile-experience.jpg",
     metrics: [
-      { label: "Message open rate", val: "98.4%", sub: "via WhatsApp" },
-      { label: "F&B room upsell", val: "+28%", sub: "via chat menus" },
-      { label: "Guest satisfaction", val: "4.9/5", sub: "average review" },
+      { label: "Delivery rate", val: "99.8%", sub: "via WhatsApp API" },
+      { label: "Dispatch speed", val: "< 2s", sub: "on booking created" },
+      { label: "Manual effort", val: "0 hrs", sub: "100% automated" },
     ],
     features: [
-      "Automated WhatsApp confirmation with room type & check-in dates",
-      "Digital keycode & contactless mobile check-in registration",
-      "Interactive QR room service ordering billed directly to stay folio",
-      "Automated post-checkout review invitations to Google & TripAdvisor",
+      "Automated one-way WhatsApp booking confirmation with reservation ID & dates",
+      "Campaign-style dispatch dashboard with sent, delivered & read receipts",
+      "Dynamic template variables auto-filled from the PMS reservation record",
+      "Instant one-click confirmation resend directly from the front desk",
     ],
   },
   {
