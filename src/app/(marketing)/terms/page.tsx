@@ -4,7 +4,7 @@ import { PageHero } from "@/components/layout/page-hero";
 import { Prose } from "@/components/layout/prose";
 
 export const metadata: Metadata = {
-  title: "Terms of Service · DeskFloow",
+  title: "Terms of Service",
   description: "Terms governing use of the DeskFloow website and platform services.",
   alternates: { canonical: "/terms" },
 };

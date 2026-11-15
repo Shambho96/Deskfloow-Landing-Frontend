@@ -1,7 +1,7 @@
-import Image from "next/image";
-import { ArrowRight, CalendarCheck, MessageSquare } from "lucide-react";
 import { ButtonLink } from "@/components/ui/button";
 import { Reveal } from "@/components/ui/reveal";
+import { ArrowRight, CalendarCheck, MessageSquare } from "lucide-react";
+import Image from "next/image";
 
 export function FinalCta() {
   return (
@@ -19,7 +19,7 @@ export function FinalCta() {
         <div className="absolute -top-24 left-1/2 size-[460px] -translate-x-1/2 rounded-full bg-brand-500/35 blur-[110px]" />
 
         <div className="relative">
-          <div className="mx-auto mb-4 inline-flex items-center gap-2 rounded-full border border-gold-400/30 bg-gold-400/10 px-3.5 py-1 text-[11px] sm:text-[12px] font-semibold tracking-wider text-gold-300 uppercase">
+          <div className="mx-auto mb-4 inline-flex items-center gap-2 rounded-full border border-gold-400/30 bg-gold-400/10 px-3.5 py-1 text-[11px] sm:text-[12px] font-semibold tracking-wider text-gold-300">
             Transform Your Hotel Operations
           </div>
           <h2 className="mx-auto max-w-3xl text-[26px] leading-[1.12] font-bold tracking-[-0.03em] text-balance sm:text-[56px]">

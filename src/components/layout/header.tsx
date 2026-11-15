@@ -1,14 +1,14 @@
 "use client";
 
+import { ButtonLink } from "@/components/ui/button";
+import { Logo } from "@/components/ui/logo";
+import { mainNav, platformNav } from "@/data/nav";
+import { cn } from "@/lib/utils";
+import { ArrowRight, ChevronDown, Menu, MessageSquare, PlayCircle, X } from "lucide-react";
+import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
-import { ChevronDown, Menu, X, ArrowRight, PlayCircle, MessageSquare } from "lucide-react";
-import { Logo } from "@/components/ui/logo";
-import { ButtonLink } from "@/components/ui/button";
-import { mainNav, platformNav } from "@/data/nav";
-import { cn } from "@/lib/utils";
 
 type MenuKey = "features" | null;
 
@@ -235,7 +235,7 @@ export function Header() {
 
               <div className="flex-1 overflow-y-auto px-4 py-4 sm:px-5 space-y-5">
                 <div>
-                  <p className="mb-2 px-2 text-[11px] font-bold tracking-widest text-muted-foreground uppercase">
+                  <p className="mb-2 px-2 text-[11px] font-bold tracking-widest text-muted-foreground">
                     Pages
                   </p>
                   <div className="grid gap-1">
@@ -266,7 +266,7 @@ export function Header() {
                 </div>
 
                 <div>
-                  <p className="mb-2 px-2 text-[11px] font-bold tracking-widest text-muted-foreground uppercase">
+                  <p className="mb-2 px-2 text-[11px] font-bold tracking-widest text-muted-foreground">
                     Platform Modules
                   </p>
                   <div className="grid gap-1">

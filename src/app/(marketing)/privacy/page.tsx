@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
 import { PageHero } from "@/components/layout/page-hero";
 import { Prose } from "@/components/layout/prose";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy · DeskFloow",
+  title: "Privacy Policy",
   description:
     "Master Privacy Policy governing hospitality data processing, system telemetry, and guest record handling at DeskFloow.",
   alternates: { canonical: "/privacy" },
@@ -154,7 +154,7 @@ export default function PrivacyPage() {
         <hr className="my-10 border-border" />
 
         <div>
-          <p className="text-xs font-semibold tracking-widest text-foreground uppercase">
+          <p className="text-xs font-semibold tracking-widest text-foreground">
             DeskFloow TERMS OF SERVICE · HOTEL INTELLIGENT OPERATIONS PLATFORM
           </p>
           <p className="mt-1 text-xs text-muted-foreground">Domain: deskfloow.in • Effective: October 28, 2026</p>

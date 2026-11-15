@@ -1,11 +1,11 @@
-import Link from "next/link";
 import { Logo } from "@/components/ui/logo";
 import { platformNav } from "@/data/nav";
+import Link from "next/link";
 
 const cols = [
   {
     title: "Features",
-    links: platformNav.slice(0, 6).map((n) => ({ label: n.label, href: n.href })),
+    links: platformNav.map((n) => ({ label: n.label, href: n.href })),
   },
   {
     title: "Navigation",
@@ -56,7 +56,7 @@ export function Footer() {
         <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
           {cols.map((c) => (
             <div key={c.title}>
-              <p className="text-[12px] font-semibold tracking-widest text-gold-300/90 uppercase">{c.title}</p>
+              <p className="text-[12px] font-semibold tracking-widest text-gold-300/90">{c.title}</p>
               <ul className="mt-4 space-y-2.5">
                 {c.links.map((l) => (
                   <li key={l.label}>

@@ -1,13 +1,13 @@
 "use client";
 
-import { Wallet, CheckCircle2 } from "lucide-react";
-import { demoProperties, demoShift, demoRooms } from "@/data/demo-properties";
-import { demoReservations } from "@/data/demo-reservations";
-import { demoOrders, orderTotal } from "@/data/demo-orders";
 import { guestOf } from "@/data/demo-guests";
+import { demoOrders, orderTotal } from "@/data/demo-orders";
+import { demoProperties, demoRooms, demoShift } from "@/data/demo-properties";
+import { demoReservations } from "@/data/demo-reservations";
 import { nightsBetween, shortDate } from "@/lib/dates";
 import { cn, formatMoney } from "@/lib/utils";
 import type { CurrencyCode } from "@/types";
+import { CheckCircle2, Wallet } from "lucide-react";
 
 const DEMO_TAX_RATE = 0.12;
 
@@ -38,7 +38,7 @@ export function FolioView({ reservationId }: { reservationId: string }) {
     <div className="space-y-4 text-[13.5px]">
       <div className="flex items-start justify-between">
         <div>
-          <p className="text-[11px] font-semibold tracking-widest text-primary uppercase">Automated Guest Folio</p>
+          <p className="text-[11px] font-semibold tracking-widest text-primary">Automated Guest Folio</p>
           <p className="mt-1 text-[17px] font-bold text-foreground">{f.property.name}</p>
           <p className="text-[12.5px] text-muted-foreground">{f.property.city}</p>
         </div>

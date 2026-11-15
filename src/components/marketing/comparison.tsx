@@ -1,8 +1,8 @@
 "use client";
 
-import { Check, X } from "lucide-react";
-import { SectionHeading, Reveal } from "@/components/ui/reveal";
 import { Logo } from "@/components/ui/logo";
+import { Reveal, SectionHeading } from "@/components/ui/reveal";
+import { Check, X } from "lucide-react";
 
 const rows = [
   ["Reservation visibility", "Spread across channel extranets, spreadsheets and paper", "One reservation list and tape chart for every source"],
@@ -45,7 +45,7 @@ export function Comparison() {
                       <X className="size-3" strokeWidth={2.75} aria-label="Fragmented limitation" />
                     </span>
                     <div>
-                      <span className="block text-[10.5px] font-bold uppercase tracking-wider text-muted-foreground/80">
+                      <span className="block text-[10.5px] font-bold tracking-wider text-muted-foreground/80">
                         Fragmented Workflow
                       </span>
                       <span>{fragmentedText}</span>
@@ -56,7 +56,7 @@ export function Comparison() {
                       <Check className="size-3" strokeWidth={2.75} aria-label="Included in DeskFloow" />
                     </span>
                     <div>
-                      <span className="block text-[10.5px] font-bold uppercase tracking-wider text-brand-700">
+                      <span className="block text-[10.5px] font-bold tracking-wider text-brand-700">
                         DeskFloow Unified Platform
                       </span>
                       <span>{unifiedText}</span>
@@ -76,10 +76,10 @@ export function Comparison() {
                 <caption className="sr-only">Fragmented workflows compared with DeskFloow</caption>
                 <thead>
                   <tr className="border-b border-brand-200/70 bg-brand-50/50">
-                    <th scope="col" className="w-[24%] px-6 py-4.5 text-[12.5px] font-bold tracking-wider text-muted-foreground uppercase">
+                    <th scope="col" className="w-[24%] px-6 py-4.5 text-[12.5px] font-bold tracking-wider text-muted-foreground">
                       Operational Area
                     </th>
-                    <th scope="col" className="w-[38%] px-6 py-4.5 text-[12.5px] font-bold tracking-wider text-muted-foreground uppercase">
+                    <th scope="col" className="w-[38%] px-6 py-4.5 text-[12.5px] font-bold tracking-wider text-muted-foreground">
                       Fragmented Workflow
                     </th>
                     <th scope="col" className="w-[38%] border-l border-brand-200/70 bg-brand-100/60 px-6 py-4">

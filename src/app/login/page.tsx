@@ -5,7 +5,7 @@ import { Logo } from "@/components/ui/logo";
 import { LoginForm } from "@/components/auth/login-form";
 
 export const metadata: Metadata = {
-  title: "Hotel Staff Login · DeskFloow",
+  title: "Hotel Staff Login",
   description: "Sign in to your DeskFloow hotel PMS and operations management workspace.",
   robots: { index: false },
 };

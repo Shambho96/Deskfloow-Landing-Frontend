@@ -4,11 +4,28 @@ import { PricingCards } from "@/components/marketing/pricing";
 import { FinalCta } from "@/components/marketing/final-cta";
 import { SectionHeading } from "@/components/ui/reveal";
 import { ChevronDown } from "lucide-react";
+import { coreSeoKeywords, siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Pricing — Boutique, Growth and Enterprise plans",
-  description: "Illustrative DeskFloow pricing for independent hotels, growing resorts and multi-property groups, with a full feature comparison.",
+  title: "Hotel PMS Pricing — Boutique, Growth & Multi-Property Plans",
+  description:
+    "Transparent cloud hotel PMS pricing for independent boutique hotels, resorts, homestays, and multi-property groups. Includes front desk software, tape chart, 2-way OTA channel manager, 0% commission direct booking engine, WhatsApp alerts, and GST billing.",
+  keywords: [
+    "hotel PMS pricing",
+    "hotel management software price India",
+    "affordable cloud hotel PMS",
+    "hotel channel manager pricing",
+    ...coreSeoKeywords.slice(0, 12),
+  ],
   alternates: { canonical: "/pricing" },
+  openGraph: {
+    type: "website",
+    url: `${siteUrl}/pricing`,
+    siteName: "DeskFloow",
+    title: "Hotel PMS Pricing — Boutique, Growth & Enterprise Plans · DeskFloow",
+    description:
+      "Compare DeskFloow plans for boutique hotels, full-service resorts, and multi-property hospitality groups.",
+  },
 };
 
 const faqs = [

@@ -4,12 +4,28 @@ import { PageHero } from "@/components/layout/page-hero";
 import { AboutShowcase } from "@/components/marketing/about-showcase";
 import { FinalCta } from "@/components/marketing/final-cta";
 import { ButtonLink } from "@/components/ui/button";
+import { coreSeoKeywords, siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About Us — Built for Modern Hospitality",
+  title: "About DeskFloow — Modern Cloud Hospitality & Hotel Operations Platform",
   description:
-    "Learn how DeskFloow unifies hotel front-desk operations, reservations, housekeeping, guest communication, and analytics in one intelligent workspace.",
+    "Discover how DeskFloow unifies cloud hotel front-desk PMS, visual tape charts, 2-way OTA distribution, commission-free direct bookings, automated WhatsApp confirmations, housekeeping, and revenue analytics.",
+  keywords: [
+    "about DeskFloow",
+    "modern hospitality technology",
+    "cloud hotel software company",
+    "intelligent hotel operations platform",
+    ...coreSeoKeywords.slice(0, 12),
+  ],
   alternates: { canonical: "/about" },
+  openGraph: {
+    type: "website",
+    url: `${siteUrl}/about`,
+    siteName: "DeskFloow",
+    title: "About Us — Built for Modern Hospitality · DeskFloow",
+    description:
+      "Learn how DeskFloow connects reservations, front desk, OTA channels, housekeeping, and guest communication in one hotel workspace.",
+  },
 };
 
 export default function AboutPage() {

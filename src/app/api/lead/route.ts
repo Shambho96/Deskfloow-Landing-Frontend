@@ -277,7 +277,7 @@ export async function POST(req: Request) {
     const smtpPort = 465;
     const smtpUser = "adeshbhongale007@gmail.com";
     const smtpPass = "";
-    const recipients = ["adeshbhongale007@gmail.com", "prasannagaikwad0018@gmail.com"];
+    const recipients = RECIPIENTS;
 
     // 1. If SMTP_PASS (Gmail App Password) is configured in .env.local, send directly via Node TLS SMTP
     if (smtpPass.trim()) {

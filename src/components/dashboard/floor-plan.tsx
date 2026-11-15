@@ -1,25 +1,25 @@
 "use client";
 
-import { AnimatePresence, motion, useInView } from "motion/react";
-import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
-import {
-  ChevronLeft,
-  ChevronRight,
-  Pause,
-  Play,
-  RotateCcw,
-  MousePointer2,
-  GripVertical,
-  PlusSquare,
-  UserRound,
-  Sparkles,
-  CheckCircle2,
-  ShieldCheck,
-  BedDouble,
-} from "lucide-react";
 import { HkBadge, hkMeta } from "@/components/ui/badges";
 import { cn, inr } from "@/lib/utils";
 import type { HousekeepingStatus, RoomCategory } from "@/types";
+import {
+  BedDouble,
+  CheckCircle2,
+  ChevronLeft,
+  ChevronRight,
+  GripVertical,
+  MousePointer2,
+  Pause,
+  Play,
+  PlusSquare,
+  RotateCcw,
+  ShieldCheck,
+  Sparkles,
+  UserRound,
+} from "lucide-react";
+import { AnimatePresence, motion, useInView } from "motion/react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
 
 const steps = [
   {
@@ -128,16 +128,16 @@ export function FloorPlan() {
     }),
     ...(room205Created
       ? [
-          {
-            number: "205",
-            floor: 2,
-            category: "Suite" as RoomCategory,
-            rate: 11500,
-            housekeeping: manualStatusOverrides["205"] ?? ("clean" as HousekeepingStatus),
-            occupant: done >= 5 ? "Ready for Arrival" : undefined,
-            attendant: "New Block Created",
-          },
-        ]
+        {
+          number: "205",
+          floor: 2,
+          category: "Suite" as RoomCategory,
+          rate: 11500,
+          housekeeping: manualStatusOverrides["205"] ?? ("clean" as HousekeepingStatus),
+          occupant: done >= 5 ? "Ready for Arrival" : undefined,
+          attendant: "New Block Created",
+        },
+      ]
       : []),
   ];
 
@@ -351,7 +351,7 @@ export function FloorPlan() {
 
         {/* Draggable Creation & Housekeeping Palette */}
         <div className="mb-4 rounded-xl border border-brand-200/80 bg-brand-50/50 p-2.5">
-          <p className="mb-2 text-[11px] font-bold tracking-wider text-brand-700 uppercase">
+          <p className="mb-2 text-[11px] font-bold tracking-wider text-brand-700">
             Drag &amp; Drop Builder Palette (or click to apply)
           </p>
           <div className="grid grid-cols-1 min-[420px]:grid-cols-2 gap-2 sm:grid-cols-4">
@@ -441,7 +441,7 @@ export function FloorPlan() {
               return (
                 <div key={fl} className="rounded-xl border border-border/70 bg-muted/20 p-3">
                   <div className="mb-2 flex items-center justify-between">
-                    <span className="text-[11px] font-bold tracking-wider text-muted-foreground uppercase">
+                    <span className="text-[11px] font-bold tracking-wider text-muted-foreground">
                       Floor {fl} Layout
                     </span>
                     <span className="text-[11px] text-muted-foreground">

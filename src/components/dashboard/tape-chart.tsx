@@ -1,15 +1,15 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import { ChevronLeft, ChevronRight, CalendarDays, Ban } from "lucide-react";
-import { format, parseISO } from "date-fns";
 import { HkBadge, resMeta } from "@/components/ui/badges";
+import { guestOf } from "@/data/demo-guests";
 import { demoRooms } from "@/data/demo-properties";
 import { demoReservations } from "@/data/demo-reservations";
-import { guestOf } from "@/data/demo-guests";
 import { DEMO_TODAY, nightsBetween, shiftIso, shortDate, weekFrom } from "@/lib/dates";
 import { cn } from "@/lib/utils";
 import type { RoomCategory } from "@/types";
+import { format, parseISO } from "date-fns";
+import { Ban, CalendarDays, ChevronLeft, ChevronRight } from "lucide-react";
+import { useMemo, useState } from "react";
 
 export function TapeChart() {
   const rooms = demoRooms.filter((r) => r.propertyId === "grand-palace");
@@ -101,7 +101,7 @@ export function TapeChart() {
           {/* Room rows by floor */}
           {floors.map((floor) => (
             <div key={floor}>
-              <div className="border-b border-border/60 bg-muted/20 px-3 py-1 text-[11px] font-semibold tracking-wider text-muted-foreground uppercase">
+              <div className="border-b border-border/60 bg-muted/20 px-3 py-1 text-[11px] font-semibold tracking-wider text-muted-foreground">
                 Floor {floor}
               </div>
               {visibleRooms

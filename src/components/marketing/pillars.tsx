@@ -4,7 +4,8 @@ import Image from "next/image";
 import { type ReactNode } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { ArrowRight, CalendarCheck, Check, ShieldCheck, Sparkles } from "lucide-react";
-import { FrontDeskDashboard } from "@/components/dashboard/front-desk";
+import { FrontDeskDashboard, KpiCards } from "@/components/dashboard/front-desk";
+import { RevenueChart, SourceDonut, OccupancyChart, CategoryChart } from "@/components/charts/analytics-charts";
 import { TapeChart } from "@/components/dashboard/tape-chart";
 import { FloorPlan } from "@/components/dashboard/floor-plan";
 import { GuestCrm } from "@/components/dashboard/guest-crm";
@@ -354,6 +355,29 @@ export function MultiPropertyPillar() {
       lead="Manage single boutique hotels or multi-property regional groups from one master workspace with centralized occupancy, ADR, and live revenue analytics."
     >
       <PropertySwitcher />
+    </Pillar>
+  );
+}
+
+export function AnalyticsPillar() {
+  return (
+    <Pillar
+      id="analytics"
+      eyebrow="Revenue management & hotel analytics"
+      title="Real-time occupancy, ADR, RevPAR and channel performance."
+      lead="Track daily hotel revenue trends, room category RevPAR, direct vs OTA booking source mix, and live cash-drawer KPIs without exporting spreadsheets."
+    >
+      <div className="overflow-hidden rounded-[22px] sm:rounded-[28px] border border-line bg-brand-50/50 p-2.5 sm:p-5 space-y-3 sm:space-y-4">
+        <KpiCards />
+        <div className="grid min-w-0 gap-3 sm:gap-4 lg:grid-cols-[1.6fr_1fr]">
+          <RevenueChart />
+          <SourceDonut />
+        </div>
+        <div className="grid min-w-0 gap-3 sm:gap-4 lg:grid-cols-2">
+          <OccupancyChart />
+          <CategoryChart />
+        </div>
+      </div>
     </Pillar>
   );
 }

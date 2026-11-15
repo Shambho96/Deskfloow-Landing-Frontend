@@ -11,6 +11,7 @@ export function Logo({
   className,
   tone = "default",
   height = 36,
+  priority = false,
   showWordmark = true,
 }: {
   className?: string;
@@ -19,7 +20,7 @@ export function Logo({
   priority?: boolean;
   showWordmark?: boolean;
 }) {
-  const width = Math.round(height * 1.25);
+  const width = Math.round(height * 1.28);
 
   return (
     <div className={cn("inline-flex items-center gap-2.5 select-none", className)}>
@@ -27,10 +28,11 @@ export function Logo({
         <Image
           src="/images/deskfloow-logo.png"
           alt="DeskFloow"
-          fill
-          sizes={`${width}px`}
-          className="object-contain"
-          priority
+          width={1024}
+          height={800}
+          unoptimized
+          priority={priority}
+          className="h-full w-full object-contain"
         />
       </div>
       {showWordmark && (

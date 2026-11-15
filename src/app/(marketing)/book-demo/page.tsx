@@ -4,12 +4,28 @@ import { ButtonLink } from "@/components/ui/button";
 import { Check, Clock, Layers, PhoneCall, ShieldCheck, Sparkles } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
+import { coreSeoKeywords, siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Book a Personalized DeskFloow Demo",
+  title: "Book a Live Hotel PMS Demo — Personalized 1-on-1 Walkthrough",
   description:
-    "Schedule a 1-on-1 walkthrough tailored to your hotel, resort, homestay or property group. See reservations, tape charts, 2-way OTA sync, automated WhatsApp booking & check-in alerts, and housekeeping.",
+    "Schedule a personalized 1-on-1 DeskFloow Hotel PMS demo tailored to your hotel, resort, homestay, or property group. Experience live front desk check-ins, 7-day tape charts, 2-way OTA sync, automated WhatsApp confirmations, housekeeping, and GST folios.",
+  keywords: [
+    "book hotel PMS demo",
+    "hotel management software live demo",
+    "DeskFloow demo",
+    "hotel channel manager walkthrough",
+    ...coreSeoKeywords.slice(0, 12),
+  ],
   alternates: { canonical: "/book-demo" },
+  openGraph: {
+    type: "website",
+    url: `${siteUrl}/book-demo`,
+    siteName: "DeskFloow",
+    title: "Book a Personalized DeskFloow Hotel PMS Demo",
+    description:
+      "See DeskFloow configured around your rooms, rate plans, OTA channels, and WhatsApp guest workflows.",
+  },
 };
 
 const expect = [

@@ -1,2 +1,36 @@
-/** Set NEXT_PUBLIC_SITE_URL once the production domain is known (used for canonical URLs, sitemap, OG). */
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+/** Production domain fallback ensures canonical URLs, sitemap, robots, and JSON-LD never emit localhost in prod. */
+export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://deskfloow.in";
+
+export const coreSeoKeywords = [
+  "DeskFloow",
+  "DeskFloow PMS",
+  "hotel PMS",
+  "cloud hotel PMS",
+  "hotel property management system",
+  "best hotel management software",
+  "hotel operations platform",
+  "all-in-one hotel software",
+  "hotel PMS India",
+  "hotel front desk software",
+  "visual hotel tape chart",
+  "2-way OTA channel manager",
+  "Booking.com channel manager",
+  "MakeMyTrip Goibibo channel manager",
+  "Airbnb Expedia Agoda channel sync",
+  "commission-free hotel booking engine",
+  "direct booking engine for hotels",
+  "WhatsApp for hotels",
+  "automated WhatsApp hotel booking confirmation",
+  "hotel guest CRM software",
+  "smart hotel housekeeping software",
+  "visual hotel floor plan",
+  "hotel restaurant POS billing",
+  "room service QR menu ordering",
+  "GST hotel billing software",
+  "hotel revenue management analytics",
+  "hotel ADR RevPAR dashboard",
+  "multi-property hotel management system",
+  "boutique hotel software",
+  "resort management software",
+  "homestay property management software",
+];

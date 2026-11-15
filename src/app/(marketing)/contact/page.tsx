@@ -9,14 +9,31 @@ import {
   Building2,
 } from "lucide-react";
 import { PageHero } from "@/components/layout/page-hero";
+import { FinalCta } from "@/components/marketing/final-cta";
 import { LeadForm } from "@/components/marketing/lead-form";
 import { ButtonLink } from "@/components/ui/button";
+import { coreSeoKeywords, siteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Contact the DeskFloow Hospitality Team",
+  title: "Contact DeskFloow — Hotel PMS Sales, Onboarding & Support",
   description:
-    "Have questions about DeskFloow PMS, 2-way OTA sync, or automated WhatsApp booking & check-in alerts for your hotel, resort, homestay or hotel group? Reach our specialists directly.",
+    "Have questions about DeskFloow Cloud Hotel PMS, 2-way OTA channel manager sync, direct booking engine, GST billing, or automated WhatsApp booking & check-in alerts for your hotel, resort, homestay or group? Reach our hospitality specialists directly.",
+  keywords: [
+    "contact DeskFloow",
+    "hotel PMS consultation",
+    "hotel software demo inquiry",
+    "hotel PMS onboarding and migration",
+    ...coreSeoKeywords.slice(0, 12),
+  ],
   alternates: { canonical: "/contact" },
+  openGraph: {
+    type: "website",
+    url: `${siteUrl}/contact`,
+    siteName: "DeskFloow",
+    title: "Contact the DeskFloow Hospitality Team · DeskFloow",
+    description:
+      "Connect directly with DeskFloow hospitality engineers for tailored hotel PMS setup, OTA channel connections, and pricing.",
+  },
 };
 
 const info = [
@@ -119,6 +136,8 @@ export default function ContactPage() {
 
         <LeadForm mode="contact" />
       </section>
+
+      <FinalCta />
     </div>
   );
 }

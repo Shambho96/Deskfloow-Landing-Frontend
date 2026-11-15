@@ -1,13 +1,16 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
-import {
-  BedDouble, CalendarCheck, CalendarRange, Globe2, MessageCircle, Network,
-  Search, Sparkles, UsersRound, UtensilsCrossed, BarChart3,
-  ArrowRight, CornerDownLeft,
-} from "lucide-react";
 import { cn } from "@/lib/utils";
+import {
+  ArrowRight,
+  BarChart3,
+  BedDouble, CalendarCheck, CalendarRange,
+  CornerDownLeft,
+  Globe2, MessageCircle, Network,
+  Search, Sparkles, UsersRound, UtensilsCrossed,
+} from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 interface SearchEntry {
   id: string;
@@ -20,15 +23,15 @@ interface SearchEntry {
 
 const searchEntries: SearchEntry[] = [
   // Features
-  { id: "f-frontdesk", category: "Feature", title: "Front Desk PMS & Night Audit", meta: "Arrivals, departures, folios, cash drawer & shift registers", href: "/features#front-desk", Icon: BedDouble },
-  { id: "f-tapechart", category: "Feature", title: "Visual Interactive Tape Chart", meta: "7-day room inventory matrix with instant drag-and-drop", href: "/features#tape-chart", Icon: CalendarRange },
-  { id: "f-channels", category: "Feature", title: "2-Way OTA Channel Manager", meta: "Instant sync with Booking.com, Airbnb, Expedia, Agoda, MMT", href: "/features#channels", Icon: Network },
-  { id: "f-booking", category: "Feature", title: "Direct Commission-Free Booking Engine", meta: "Fast, mobile-optimized booking engine on your domain", href: "/features#booking", Icon: Globe2 },
-  { id: "f-whatsapp", category: "Feature", title: "WhatsApp Guest Concierge & Digital Keys", meta: "Automated pre-arrival, digital key delivery & room requests", href: "/features#whatsapp", Icon: MessageCircle },
-  { id: "f-crm", category: "Feature", title: "Guest CRM, History & Loyalty", meta: "Guest profiles, VIP tags, preferences and stay history", href: "/features#crm", Icon: UsersRound },
-  { id: "f-housekeeping", category: "Feature", title: "Smart Housekeeping & Visual Floor Plans", meta: "Live room readiness status, dirty-room guard & checklists", href: "/features#housekeeping", Icon: Sparkles },
-  { id: "f-orders", category: "Feature", title: "Restaurant POS & Room Service Billing", meta: "Contactless QR menus, orders directly billed to room folio", href: "/features#orders", Icon: UtensilsCrossed },
-  { id: "f-analytics", category: "Feature", title: "Revenue Management & Analytics", meta: "Real-time occupancy, ADR, RevPAR and source mix reporting", href: "/features#analytics", Icon: BarChart3 },
+  { id: "f-frontdesk", category: "Feature", title: "Front Desk PMS & Night Audit", meta: "Arrivals, departures, folios, cash drawer & shift registers", href: "/features/front-desk", Icon: BedDouble },
+  { id: "f-tapechart", category: "Feature", title: "Visual Interactive Tape Chart", meta: "7-day room inventory matrix with instant drag-and-drop", href: "/features/tape-chart", Icon: CalendarRange },
+  { id: "f-channels", category: "Feature", title: "2-Way OTA Channel Manager", meta: "Instant sync with Booking.com, Airbnb, Expedia, Agoda, MMT", href: "/features/channels", Icon: Network },
+  { id: "f-booking", category: "Feature", title: "Direct Commission-Free Booking Engine", meta: "Fast, mobile-optimized booking engine on your domain", href: "/features/booking", Icon: Globe2 },
+  { id: "f-whatsapp", category: "Feature", title: "WhatsApp Guest Concierge & Digital Keys", meta: "Automated pre-arrival, digital key delivery & room requests", href: "/features/whatsapp", Icon: MessageCircle },
+  { id: "f-crm", category: "Feature", title: "Guest CRM, History & Loyalty", meta: "Guest profiles, VIP tags, preferences and stay history", href: "/features/crm", Icon: UsersRound },
+  { id: "f-housekeeping", category: "Feature", title: "Smart Housekeeping & Visual Floor Plans", meta: "Live room readiness status, dirty-room guard & checklists", href: "/features/housekeeping", Icon: Sparkles },
+  { id: "f-orders", category: "Feature", title: "Restaurant POS & Room Service Billing", meta: "Contactless QR menus, orders directly billed to room folio", href: "/features/orders", Icon: UtensilsCrossed },
+  { id: "f-analytics", category: "Feature", title: "Revenue Management & Analytics", meta: "Real-time occupancy, ADR, RevPAR and source mix reporting", href: "/features/analytics", Icon: BarChart3 },
 
   // Actions
   { id: "a-demo", category: "Action", title: "Book a Guided Live Product Demo", meta: "Schedule a personalized 1-on-1 walkthrough for your hotel", href: "/book-demo", Icon: CalendarCheck },
@@ -165,7 +168,7 @@ export function CommandPalette() {
                           <p className="text-[14px] font-semibold truncate">{r.title}</p>
                           <span
                             className={cn(
-                              "rounded-full px-2 py-0.5 text-[10.5px] font-medium tracking-wide uppercase",
+                              "rounded-full px-2 py-0.5 text-[10.5px] font-medium tracking-wide",
                               isSelected
                                 ? "bg-white/20 text-white"
                                 : "bg-brand-100/70 text-brand-800"

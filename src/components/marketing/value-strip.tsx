@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { RotatingWords } from "@/components/animations/rotating-words";
+import { Reveal } from "@/components/ui/reveal";
+import { cn } from "@/lib/utils";
 import {
   BedDouble,
   Briefcase,
@@ -17,9 +17,9 @@ import {
   Sparkles,
   TrendingUp,
 } from "lucide-react";
-import { RotatingWords } from "@/components/animations/rotating-words";
-import { Reveal } from "@/components/ui/reveal";
-import { cn } from "@/lib/utils";
+import { AnimatePresence, motion } from "motion/react";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const rotatingPhrases = [
   "Manage Every Room.",
@@ -183,7 +183,7 @@ export function ValueStrip() {
 
       {/* Continuous running marquee with icons for each stay type */}
       <div className="mt-16 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_12%,black_88%,transparent)]">
-        <p className="mb-5 text-center text-[12px] font-medium tracking-widest text-muted-foreground uppercase">
+        <p className="mb-5 text-center text-[12px] font-medium tracking-widest text-muted-foreground">
           Designed for every kind of stay
         </p>
         <div className="flex w-max animate-marquee gap-3 py-2 hover:[animation-play-state:paused]">

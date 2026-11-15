@@ -1,11 +1,11 @@
 "use client";
 
+import { HkBadge } from "@/components/ui/badges";
+import { SectionHeading } from "@/components/ui/reveal";
+import { cn } from "@/lib/utils";
+import { Building2, Check, LineChart, Network, Sparkles, UsersRound } from "lucide-react";
 import { AnimatePresence, motion, useInView, useScroll, useSpring } from "motion/react";
 import { useEffect, useRef, useState } from "react";
-import { Building2, Network, UsersRound, Sparkles, LineChart, Check } from "lucide-react";
-import { SectionHeading } from "@/components/ui/reveal";
-import { HkBadge } from "@/components/ui/badges";
-import { cn } from "@/lib/utils";
 
 const steps = [
   { icon: Building2, title: "Connect your property and room inventory", text: "Add floors, room categories and rates — or generate rooms in bulk and arrange them on a floor plan." },
@@ -85,7 +85,7 @@ function Step({ i, onActive, active }: { i: number; onActive: (i: number) => voi
       <span className={cn("absolute top-0 left-0 grid size-9 sm:size-10 place-items-center rounded-xl border-2 bg-white transition", active ? "border-gold-400 text-gold-600 shadow-glow" : "border-brand-200 text-brand-500")}>
         <s.icon className="size-4 sm:size-4.5" />
       </span>
-      <p className="text-[11.5px] sm:text-[12px] font-semibold tracking-widest text-muted-foreground uppercase">Step {i + 1}</p>
+      <p className="text-[11.5px] sm:text-[12px] font-semibold tracking-widest text-muted-foreground">Step {i + 1}</p>
       <h3 className={cn("mt-1 text-[18.5px] sm:text-[22px] leading-tight font-semibold tracking-tight transition-colors", active ? "text-ink" : "text-ink/55")}>{s.title}</h3>
       <p className="mt-2 max-w-md text-[14px] sm:text-[15px] text-muted-foreground">{s.text}</p>
       {/* On small screens the mini UI sits inline with its step */}

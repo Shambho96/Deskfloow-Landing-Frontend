@@ -1,10 +1,10 @@
 "use client";
 
-import { motion, useMotionValueEvent, useScroll, useSpring, useTransform } from "motion/react";
-import { useRef, useState } from "react";
-import { CalendarPlus, RefreshCw, MessageCircle, Sparkles, KeyRound } from "lucide-react";
 import { SectionHeading } from "@/components/ui/reveal";
 import { cn } from "@/lib/utils";
+import { CalendarPlus, KeyRound, MessageCircle, RefreshCw, Sparkles } from "lucide-react";
+import { motion, useMotionValueEvent, useScroll, useSpring, useTransform } from "motion/react";
+import { useRef, useState } from "react";
 
 const stages = [
   { icon: CalendarPlus, title: "Booking received", text: "Direct site, OTA, phone or walk-in." },
@@ -51,7 +51,7 @@ export function BookingJourney() {
                     <s.icon className="size-5" />
                   </span>
                   <span>
-                    <span className="block text-[11px] font-semibold tracking-widest text-muted-foreground uppercase">Step {i + 1}</span>
+                    <span className="block text-[11px] font-semibold tracking-widest text-muted-foreground">Step {i + 1}</span>
                     <span className={cn("mt-1 block text-[16px] font-semibold tracking-tight transition-colors", reached ? "text-ink" : "text-ink/50")}>{s.title}</span>
                     <span className="mt-1 block text-[13.5px] text-muted-foreground">{s.text}</span>
                   </span>
